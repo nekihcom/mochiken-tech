@@ -1,3 +1,4 @@
+'use client';
 import { FC, memo } from "react";
 
 // example ssr
@@ -15,6 +16,7 @@ import { FC, memo } from "react";
 // };
 
 const Home:FC = memo(() => {
+  
   return (
     <>
       <p>mochiken.tech</p>
@@ -22,5 +24,4 @@ const Home:FC = memo(() => {
   )
 });
 
-Home.displayName = "Home";
 export default Home;

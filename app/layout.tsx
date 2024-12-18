@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
 import { FC, memo, ReactNode } from "react";
-import { M_PLUS_1_Code } from "next/font/google";
+// import { M_PLUS_1_Code } from "next/font/google";
 
-import "./globals.css";
+import { Provider } from "@/components/ui/provider";
+
+// import "./globals.css";
 import { siteConfig } from "../config/site";
 
 
-const MPlus1CodeFont = M_PLUS_1_Code({ 
-  weight: "400", 
-  subsets: ["latin"],
-  variable: "--font-MPlus1Code"
-});
+// const MPlus1CodeFont = M_PLUS_1_Code({ 
+//   weight: "400", 
+//   subsets: ["latin"],
+//   variable: "--font-MPlus1Code"
+// });
 
 export const metadata: Metadata = {
   title: {
@@ -31,10 +33,14 @@ const RootLayout:FC<Props> = memo((props) => {
   const {children} = props;
 
   return (
-    <html lang="en">
+    <html suppressHydrationWarning>
       <head />
-      <body className={`${MPlus1CodeFont.variable} font-MPlus1Code`}>
-        {children}
+      <body 
+        // className={`${MPlus1CodeFont.variable} font-MPlus1Code`}
+      >
+        <Provider>
+          { children }
+        </Provider>
       </body>
     </html>
   );
