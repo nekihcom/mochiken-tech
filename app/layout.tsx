@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
 import { FC, memo, ReactNode } from "react";
 import { M_PLUS_1_Code } from "next/font/google";
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 
 import "./globals.css";
 import { siteConfig } from "../config/site";
-import { Header } from "@/components/organisms/layout/Header";
-import { Footer } from "@/components/organisms/layout/Footer";
 
 
 const MPlus1CodeFont = M_PLUS_1_Code({ 
@@ -37,11 +34,7 @@ const RootLayout:FC<Props> = memo((props) => {
     <html lang="en">
       <head />
       <body className={`${MPlus1CodeFont.variable} font-MPlus1Code`}>
-        <AppRouterCacheProvider>
-          <Header />
-          {children}
-          <Footer />
-        </AppRouterCacheProvider>
+        {children}
       </body>
     </html>
   );
