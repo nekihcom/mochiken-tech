@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { FC, memo, ReactNode } from "react";
 // import { M_PLUS_1_Code } from "next/font/google";
 
-import { Provider } from "@/components/ui/provider";
 
 // import "./globals.css";
 import { siteConfig } from "../config/site";
@@ -38,9 +37,7 @@ const RootLayout:FC<Props> = memo((props) => {
       <body 
         // className={`${MPlus1CodeFont.variable} font-MPlus1Code`}
       >
-        <Provider>
-          { children }
-        </Provider>
+        { children }
       </body>
     </html>
   );

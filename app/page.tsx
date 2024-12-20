@@ -1,4 +1,3 @@
-'use client';
 import { FC, memo } from "react";
 
 // example ssr
@@ -19,7 +18,7 @@ const Home:FC = memo(() => {
   
   return (
     <>
-      <p>mochiken.tech</p>
+      <p>Mochiken.Tech</p>
     </>
   )
 });
