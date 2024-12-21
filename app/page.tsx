@@ -1,5 +1,4 @@
-import { Button, Container } from "@mui/material";
-import { grey } from "@mui/material/colors";
+import Home from "@/components/pages/Home";
 import { FC, memo } from "react";
 
 // example ssr
@@ -16,17 +15,13 @@ import { FC, memo } from "react";
 //   );
 // };
 
-const Home:FC = memo(() => {
+const PageHome:FC = memo(() => {
   
   return (
     <>
-      <Container maxWidth="sm" sx={{backgroundColor:grey[900]}}>
-        <p>Mochiken.Tech</p>
-        <Button variant="contained">Hello world</Button>
-      </Container>
+      <Home />
     </>
   )
 });
 
-Home.displayName = "Home";
-export default Home;
+export default PageHome;

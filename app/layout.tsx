@@ -3,6 +3,7 @@ import { FC, memo, ReactNode } from "react";
 
 // import { M_PLUS_1_Code } from "next/font/google";
 
+import '@/styles/global.css';
 import { siteConfig } from "../config/site";
 
 
@@ -31,7 +32,7 @@ const RootLayout:FC<Props> = memo((props) => {
   const {children} = props;
 
   return (
-    <html suppressHydrationWarning>
+    <html>
       <head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

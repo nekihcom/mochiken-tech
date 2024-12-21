@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0
+}
+
+a:link, a:visited {
+  color: #fff;
+  text-decoration: underline;
+}
+
+@media (min-width: 400px) { 
+  .is-sp {
+    display: none;
+  }
+ }
