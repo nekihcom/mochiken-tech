@@ -9,7 +9,8 @@ const Copyright:FC = memo(() => {
       <Text sx={{color:'#fff'}}>
         © Copyright { new Date().getFullYear() }. 
         <br className='is-sp'/>
-        Made by <Box component={'a'} target='_blank' href='/' sx={{fontWeight:700}}>Masaya Kemmochi</Box>
+        Made by <Box component={'a'} target='_blank' href='/' sx={{
+          fontWeight:700, color:'#fff', textDecoration:'underline'}}>Masaya Kemmochi</Box>
       </Text>
     </>
   )
