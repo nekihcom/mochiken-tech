@@ -12,6 +12,7 @@ const Heading2:FC<Props> = memo((props) => {
 
   "fontSize" in sx ? null: sx["fontSize"] = "24px";
   "fontWeight" in sx ? null: sx["fontWeight"] = "700";
+  "letterSpacing" in sx ? null :sx["letterSpacing"] = 1.5;
 
   return (
     <>
