@@ -1,14 +1,14 @@
 import { FC, memo } from "react";
+
 import { Box } from "@mui/material";
-import PrimaryContainer from "../../atoms/PrimaryContainer";
+
+import HeaderMenu from "@/components/molecules/HeaderMenu";
 
 const Header:FC = memo(() => {
   return (
     <>
-      <Box component='header' sx={{backgroundColor:"red"}}>
-        <PrimaryContainer>
-          <p>Header</p>
-        </PrimaryContainer>
+      <Box component='header'>
+        <HeaderMenu />
       </Box>    
     </>
   )

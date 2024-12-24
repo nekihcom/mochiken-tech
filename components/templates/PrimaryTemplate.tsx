@@ -10,11 +10,12 @@ type Props = {
 }
 const PrimaryTemplate:FC<Props> = memo((props) => {
   const { children } = props;
+
   return (
     <>
       <Box>
         <Header />
-        { children }
+          { children }
         <Footer />
       </Box>
     </>
