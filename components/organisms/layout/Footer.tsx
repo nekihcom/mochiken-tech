@@ -6,6 +6,10 @@ import { teal } from '@mui/material/colors';
 import PrimaryContainer from '@/components/atoms/PrimaryContainer';
 import Copyright from '@/components/molecules/Copyright';
 import SnsLinkList from '@/components/molecules/SnsLinkList';
+import { h3Style, pStyle } from '@/styles/style';
+
+const footerH3Style = { ...h3Style, ...{textTransform:'uppercase', mb:2, color:'#fff'} };
+const footerTextStyle = {...pStyle, ...{color:'#fff'} };
 
 const Footer:FC = memo(() => {
   return (
@@ -23,12 +27,12 @@ const Footer:FC = memo(() => {
                 mb:5, 
                 order:{sm:2}
               }}>
-                <Typography sx={{ fontSize:"24px", fontWeight:"700", letterSpacing:1.5, textTransform:'uppercase', mb:2, color:'#fff'}}>SNS</Typography>
+                <Typography component={'h3'} sx={footerH3Style}>SNS</Typography>
                 <SnsLinkList />
               </Box>
               <Box>
-                <Typography sx={{ fontSize:"24px", fontWeight:"700", letterSpacing:1.5, textTransform:'uppercase', mb:2, color:'#fff'}}>Masaya Kemmochi</Typography>
-                <Typography sx={{fontSize:14, color:'#fff'}}>フロントエンドからバックエンドまで幅広く対応可能なWEBエンジニアです。<br />CMSやBIの構築案件を得意としています。</Typography>
+                <Typography component={'h3'} sx={footerH3Style}>Masaya Kemmochi</Typography>
+                <Typography component={'p'} sx={footerTextStyle}>フロントエンドからバックエンドまで幅広く対応可能なWEBエンジニアです。<br />CMSやBIの構築案件を得意としています。</Typography>
               </Box>
             </Box>
             <Divider variant='middle'/>

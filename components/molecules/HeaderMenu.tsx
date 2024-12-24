@@ -16,7 +16,8 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
-import PrimaryContainer from "../atoms/PrimaryContainer";
+import PrimaryContainer from "@/components/atoms/PrimaryContainer";
+import { h1Style } from "@/styles/style";
 
 // ナビゲーションリンクのリスト
 const navItems = [
@@ -24,6 +25,8 @@ const navItems = [
   { label: '料金', href: '/pricing' },
   { label: 'お問い合せ', href: '/contact' },
 ];
+
+const headerTitleStyle = { ...h1Style, ...{color:'#000', textTransform:'uppercase'}};
 
 const HeaderMenu:FC = memo(() => {
   // モバイルドロワーの開閉状態を管理
@@ -61,7 +64,7 @@ const HeaderMenu:FC = memo(() => {
           <Toolbar sx={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
 
             <Box component='a' href='/' sx={{textDecoration:'none !important'}}>
-              <Typography sx={{ fontSize:"28px", fontWeight:"700", letterSpacing:2, color:'#000', textTransform:'uppercase'}}>Mochiken.tech</Typography>
+              <Typography component={'h1'} sx={headerTitleStyle}>Mochiken.tech</Typography>
             </Box>
           
             <Box sx={{ display: { xs: 'none', md: 'block' } }}>
