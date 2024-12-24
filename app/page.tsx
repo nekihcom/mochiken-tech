@@ -24,4 +24,5 @@ const PageHome:FC = memo(() => {
   )
 });
 
+PageHome.displayName = 'PageHome';
 export default PageHome;

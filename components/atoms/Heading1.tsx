@@ -10,9 +10,9 @@ type Props = {
 const Heading1:FC<Props> = memo((props) => {
   const { children='', sx={} } = props;
 
-  "fontSize" in sx ? null: sx["fontSize"] = "28px";
-  "fontWeight" in sx ? null: sx["fontWeight"] = "700";
-  "letterSpacing" in sx ? null :sx["letterSpacing"] = 2;
+  sx["fontSize"] = "fontSize" in sx ? 'inherit' : "28px";
+  sx["fontWeight"] = "fontWeight" in sx ? 'inherit' : "700";
+  sx["letterSpacing"] = "letterSpacing" in sx ? 'inherit' : 2;
 
   return (
     <>

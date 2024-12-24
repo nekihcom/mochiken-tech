@@ -35,12 +35,12 @@ const RootLayout:FC<Props> = memo((props) => {
     <html>
       <head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
+        {/* <link rel="preconnect" href="https://fonts.googleapis.com" /> */}
+        {/* <link rel="preconnect" href="https://fonts.gstatic.com" /> */}
+        {/* <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
-        />
+        /> */}
       </head>
       <body 
         // className={`${MPlus1CodeFont.variable} font-MPlus1Code`}

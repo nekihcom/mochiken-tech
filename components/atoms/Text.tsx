@@ -11,7 +11,7 @@ type Props = {
 const Text:FC<Props> = memo((props) => {
   const { children='', sx={} } = props;
 
-  "fontSize" in sx ? null: sx["fontSize"] = "16px";
+  sx["fontSize"] = "fontSize" in sx ? 'inherit' : "16px";
 
   return (
     <>
