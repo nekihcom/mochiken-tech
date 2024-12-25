@@ -3,6 +3,7 @@ import { FC, memo } from "react";
 import PrimaryTemplate from "../templates/PrimaryTemplate";
 import PrimaryContainer from "../atoms/PrimaryContainer";
 import KeyVisual from "../organisms/contents/KeyVisual";
+import { Box } from "@mui/material";
 
 const Home:FC = memo(() => {
   return (
@@ -10,7 +11,9 @@ const Home:FC = memo(() => {
       <PrimaryTemplate>
         <KeyVisual />
         <PrimaryContainer>
-          <p>Home contents</p>
+          <Box component={'section'}>
+            <p>Home contents</p>
+          </Box>
         </PrimaryContainer>
       </PrimaryTemplate>
     </>

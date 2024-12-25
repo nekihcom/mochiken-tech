@@ -11,8 +11,64 @@ a:link, a:visited {
   /* text-decoration: underline; */
 }
 
-@media (min-width: 400px) { 
+@media (min-width: 450px) { 
   .is-sp {
     display: none;
   }
  }
+
+/* ヘッダーメニュー */
+.hamburgerMenu__list .hamburgerMenu__list--item a {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ホバーしたら下線が表示されるアニメーション */
+.headerMenu__list .headerMenu__list--item a,
+.hamburgerMenu__list .hamburgerMenu__list--item a {
+  /*線の基点とするためrelativeを指定*/
+  position: relative;
+}
+
+.headerMenu__list .headerMenu__list--item.current a,
+.headerMenu__list .headerMenu__list--item a:hover,
+.hamburgerMenu__list .hamburgerMenu__list--item.current a,
+.hamburgerMenu__list .hamburgerMenu__list--item a:hover {
+  color:#00796B;
+}
+
+.headerMenu__list .headerMenu__list--item a::after,
+.hamburgerMenu__list .hamburgerMenu__list--item a::after {
+  content: '';
+  /*絶対配置で線の位置を決める*/
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  /*線の形状*/
+  width: 80%;
+  height: 2px;
+  background:#00796B;
+  /*アニメーションの指定*/
+  transition: all .3s;
+  transform: scale(0, 1);/*X方向0、Y方向1*/
+  transform-origin: center top;/*上部中央基点*/
+}
+
+/*現在地とhoverの設定*/
+.headerMenu__list .headerMenu__list--item.current a::after,
+.headerMenu__list .headerMenu__list--item a:hover::after,
+.hamburgerMenu__list .hamburgerMenu__list--item.current a::after,
+.hamburgerMenu__list .hamburgerMenu__list--item a:hover::after {
+  transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+.headerMenu__list .headerMenu__list--item a span,
+.hamburgerMenu__list .hamburgerMenu__list--item a span {
+  font-size: 18px;
+    /* color: #333; */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+

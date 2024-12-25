@@ -3,28 +3,11 @@ export type SiteConfig = typeof siteConfig;
 export const siteConfig = {
   name: "Mochiken's Portfolio",
   description: "エンジニアもちけんのポートフォリオサイトです",
-  // navItems: [
-  //   {
-  //     label: "Home",
-  //     href: "/",
-  //   },
-  //   {
-  //     label: "Docs",
-  //     href: "/docs",
-  //   },
-  //   {
-  //     label: "Pricing",
-  //     href: "/pricing",
-  //   },
-  //   {
-  //     label: "Blog",
-  //     href: "/blog",
-  //   },
-  //   {
-  //     label: "About",
-  //     href: "/about",
-  //   },
-  // ],
+  navItems: [
+    { label: 'Link1', href: '/link1' },
+    { label: 'Link2', href: '/link2' },
+    { label: 'Link3', href: '/link3' },
+  ],
   // navMenuItems: [
   //   {
   //     label: "Profile",

@@ -24,7 +24,7 @@ const SnsLinkList:FC = memo(() => {
             borderRadius: '5px',
 
           }}>
-            <ListItemButton component="a" href={sns.title} target='_blank' sx={{
+            <ListItemButton component="a" href={sns.link} target='_blank' sx={{
               p:0, 
               display: 'flex',
               flexShrink: 'inherit'

@@ -1,32 +1,19 @@
 'use client';
 import { FC, memo, useState } from "react";
 import Link from 'next/link';
-import {
-  AppBar,
-  Box,
-  Toolbar,
-  IconButton,
-  Typography,
-  Drawer,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-  Button,
-} from '@mui/material';
+import { AppBar, Box, Toolbar, IconButton, Typography, Drawer, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import { teal } from "@mui/material/colors";
 
 import PrimaryContainer from "@/components/atoms/PrimaryContainer";
+import { siteConfig } from "@/config/site";
 import { h1Style } from "@/styles/style";
 
 // ナビゲーションリンクのリスト
-const navItems = [
-  { label: '概要', href: '/overview' },
-  { label: '料金', href: '/pricing' },
-  { label: 'お問い合せ', href: '/contact' },
-];
+const navItems = siteConfig.navItems;
 
-const headerTitleStyle = { ...h1Style, ...{color:'#000', textTransform:'uppercase'}};
+// ヘッダータイトルのスタイル
+const headerTitleStyle = { ...h1Style, ...{color:'#000', textTransform:'uppercase', fontSize:'20px', letterSpacing:'1px'}};
 
 const HeaderMenu:FC = memo(() => {
   // モバイルドロワーの開閉状態を管理
@@ -37,22 +24,43 @@ const HeaderMenu:FC = memo(() => {
     setMobileOpen((prevState) => !prevState);
   };
     
+  // PC時に表示されるヘッダーメニューの中身
+  const headerMenuListItems = (
+    <List className='headerMenu__list' sx={{ display: { xs: 'none', md: 'flex' } }}>
+      {navItems.map((item) => (
+        <ListItem className='headerMenu__list--item' key={item.label} sx={{width:'auto'}}>
+          <ListItemButton component="a" href={item.href} sx={{ p:0, color: '#000', '&:hover':{backgroundColor:'#fff'} }}>
+            <ListItemText primary={item.label} slotProps={{ primary: {fontWeight:700} }} />
+          </ListItemButton>
+        </ListItem>
+      ))}
+      <ListItem sx={{width:'auto'}}>
+        <ListItemButton component="a" href={'contact'} sx={{ borderRadius:2, textTransform:'uppercase', color:'#fff', backgroundColor:teal[700], '&:hover':{backgroundColor:teal[200]} }}>
+          <ListItemText primary={'Contact'} slotProps={{ primary: {fontWeight:700} }} />
+        </ListItemButton>
+      </ListItem>
+    </List>
+  );
+
   // モバイル時に表示されるドロワーの中身
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        <Link href="/" style={{ textDecoration: 'none', color: 'inherit', textTransform:'uppercase' }}>
-          Mochiken.tech
-        </Link>
-      </Typography>
-      <List>
+    <Box onClick={handleDrawerToggle} sx={{ mt:7.5, textAlign: 'center' }}>
+      {/* <Box component='a' href='/' sx={{my:2, display:'block', textDecoration:'none !important'}}>
+        <Typography component={'h1'} sx={headerTitleStyle}>Mochiken.tech</Typography>
+      </Box> */}
+      <List className='hamburgerMenu__list'>
         {navItems.map((item) => (
-          <ListItem key={item.label} disablePadding>
+          <ListItem className='hamburgerMenu__list--item' key={item.label} disablePadding>
             <ListItemButton component="a" href={item.href}>
               <ListItemText primary={item.label} />
             </ListItemButton>
           </ListItem>
         ))}
+        <ListItem sx={{width:'auto'}}>
+          <ListItemButton component="a" href={'contact'} sx={{ borderRadius:2, textTransform:'uppercase', color:'#fff', backgroundColor:teal[700], '&:hover':{backgroundColor:teal[200]} }}>
+            <ListItemText primary={'Contact'} slotProps={{ primary: {fontWeight:700, textAlign:'center'} }} />
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );
@@ -67,13 +75,7 @@ const HeaderMenu:FC = memo(() => {
               <Typography component={'h1'} sx={headerTitleStyle}>Mochiken.tech</Typography>
             </Box>
           
-            <Box sx={{ display: { xs: 'none', md: 'block' } }}>
-              {navItems.map((item) => (
-                <Button key={item.label} href={item.href} sx={{ color: '#000' }}>
-                  {item.label}
-                </Button>
-              ))}
-            </Box>
+            { headerMenuListItems }
 
             <IconButton color="inherit" aria-label="open drawer" edge="end"
               onClick={handleDrawerToggle} sx={{
