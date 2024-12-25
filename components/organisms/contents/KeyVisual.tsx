@@ -5,6 +5,7 @@ import { Box, Typography } from "@mui/material";
 import PrimaryContainer from "@/components/atoms/PrimaryContainer";
 import { h1Style, pStyle } from "@/styles/style";
 import { teal } from "@mui/material/colors";
+import ScrollDown from "@/components/atoms/ScrollDown";
 
 
 const kvTitleStyle = { ...h1Style, ...{letterSpacing:1, mb:3, fontSize:'48px'}};
@@ -29,8 +30,8 @@ const KeyVisual:FC = memo(() => {
                 <Box component="img"sx={{maxWidth:'330px', width: '100%'}} src="/me.png" />
               </Box>
             </Box>
-            
           </Box>
+          <ScrollDown />
         </PrimaryContainer>
       </Box>
     </>
