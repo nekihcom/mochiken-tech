@@ -5,7 +5,15 @@ import { List, ListItem, ListItemButton, ListItemIcon } from "@mui/material";
 import { snslinklist } from "@/data/data";
 import { SnsLink } from "@/type/type";
 
-const SnsLinkList:FC = memo(() => {
+
+type Props = {
+  color?: string;
+};
+
+
+const SnsLinkList:FC<Props> = memo((props) => {
+  const { color='#fff' } = props;
+
   return (
     <>
       <List sx={{
@@ -35,7 +43,7 @@ const SnsLinkList:FC = memo(() => {
                 flexShrink: 'inherit',
                 display: 'flex',
                 alignItems: 'center', 
-                color:'#fff'
+                color:color
               }}>
                 {sns.icon}
               </ListItemIcon>

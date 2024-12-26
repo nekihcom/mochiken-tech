@@ -7,17 +7,17 @@ import { SnsLink } from '@/type/type';
 
 export const snslinklist:Array<SnsLink> = [
   {
-    title: 'x',
+    title: 'X(Twitter)',
     link: 'https://x.com/nekihcom',
     icon: <XIcon fontSize='medium'/>
   },
   {
-    title: 'github',
+    title: 'GitHub',
     link: 'https://github.com/nekihcom',
     icon: <GitHubIcon fontSize='medium'/>
   },
   {
-    title: 'email',
+    title: 'Email',
     link: 'mailto:nekihcom0@gmail.com',
     icon: <EmailIcon fontSize='medium'/>
   },

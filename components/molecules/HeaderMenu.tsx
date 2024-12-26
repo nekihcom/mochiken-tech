@@ -45,9 +45,6 @@ const HeaderMenu:FC = memo(() => {
   // モバイル時に表示されるドロワーの中身
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ mt:7.5, textAlign: 'center' }}>
-      {/* <Box component='a' href='/' sx={{my:2, display:'block', textDecoration:'none !important'}}>
-        <Typography component={'h1'} sx={headerTitleStyle}>Mochiken.tech</Typography>
-      </Box> */}
       <List className='hamburgerMenu__list'>
         {navItems.map((item) => (
           <ListItem className='hamburgerMenu__list--item' key={item.label} disablePadding>

@@ -17,7 +17,8 @@ const KeyVisual:FC = memo(() => {
       <Box component='section' sx={{
         height:'95vh', 
         display:'flex', justifyContent:'center', alignItems:'center',
-        backgroundColor:'#ededed'
+        backgroundColor:'#ededed',
+        background: 'linear-gradient(to right, rgba(245, 245, 245, 0.8), rgba(245, 245, 245, 0.8)), url(/bgimage.svg)'
       }}>
         <PrimaryContainer>
           <Box>
