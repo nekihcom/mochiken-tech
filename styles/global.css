@@ -130,3 +130,52 @@
   height: 50px;
   background:#000;
 }
+
+
+.skillList {
+  box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #E6ECF8;
+  border-radius: 12px;
+}
+@media (min-width: 900px) {
+  .skillList {
+    display: flex;
+    align-items: stretch;
+  }
+}
+
+.skillList__item {
+  padding: 50px 30px !important;
+  border-bottom: 1px solid #E6ECF8;
+  border-right: 0px solid #E6ECF8;
+  display: block !important;
+  text-align: center !important;
+}
+@media (min-width: 450px) {
+  .skillList__item {
+    display: block !important;
+    border-bottom: none;
+    border-right: 1px solid #E6ECF8;
+  }
+}
+
+.skillList__item:last-child {
+  border-right: none;
+  border-bottom: none;
+}
+
+.skillList__item {
+  text-align: center;
+  margin: 0;
+}
+
+.skillList__item h2,
+.skillList__item h3 {
+  font-weight: 700;
+  text-align: center;
+}
+.skillList__item h2 {
+  font-size: 1.5rem;
+}
+.skillList__item p {
+  margin-bottom: 30px;
+}

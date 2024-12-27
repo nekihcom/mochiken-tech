@@ -20,14 +20,15 @@ const Home:FC = memo(() => {
         <KeyVisual />
         <PrimaryContainer>
           <Box component={'main'}>
-            <Box component={'section'} id='About' sx={{height:'90vh', 
-              display:'flex',justifyContent:'center', alignItems:'center'
+            <Box component={'section'} id='About' sx={{
+              my:{xs:20}
             }}>
               <Box>
                 <Typography component={'h1'} sx={aboutTitleStyle}>About me</Typography>
                 <Box sx={{
                   display:{md:'flex'}, 
-                  justifyContent:'center', 
+                  justifyContent:'space-around', 
+                  mb:{xs:10}
                 }}>
                   <AboutText />
                   <AboutSnsList />
