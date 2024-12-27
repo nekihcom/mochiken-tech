@@ -184,8 +184,6 @@
 
 
 /* ----------- ホーム　成果物リスト ----------- */
-/* .workList { */
-/* } */
 @media (min-width: 900px) {
   .workList {
     display:block;
@@ -212,9 +210,6 @@
   .workList__card {
     display: flex;
     align-items: center;
-  }
-  .workList__item:nth-child(even) .workList__card {
-    /* flex-direction: row-reverse; */
   }
 }
 
@@ -256,4 +251,73 @@
   .workList__card--actions {
     justify-content: start;
   }
+}
+
+
+
+/* ----------- ホーム　記事リスト ----------- */
+@media (min-width: 900px) {
+  .articleList {
+    display: flex;
+    justify-content: space-between;
+  } 
+  .articleList .articleList__item:nth-child(1) {
+    margin-left: 5%;
+  }
+  .articleList .articleList__item:nth-child(3) {
+    margin-right: 5%;
+  }
+}
+
+.articleList__item {
+  justify-content: center !important;
+  margin: 30px 0;
+}
+@media (min-width: 900px) {
+  .articleList__item {
+    max-width: 332px;
+  }
+}
+
+.articleList__card {
+  border: 2px solid rgba(100, 116, 139, 0.1);
+  text-decoration: none;
+}
+.articleList__card:hover {
+  opacity: 0.8;
+}
+@media (min-width: 900px) {
+  /* .articleList__card {
+    display: flex;
+    align-items: center;
+  } */
+}
+
+.articleList__card--media {
+  width: 328px;
+  max-width: 100%;
+  /* width: 100%; */
+  object-fit: cover;
+  /* aspect-ratio: 40/21; */
+}
+@media (min-width: 900px) {
+  /* .articleList__card--media {
+    width: 50%;
+    margin-right: 30px;
+  } */
+}
+
+.articleList__card--text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: .5rem;
+  background-color: rgba(100, 116, 139, 0.05);
+}
+
+@media (min-width: 900px) {
+  /* .articleList__card--text h2,
+  .articleList__card--text p {
+    text-align: start;
+  } */
 }
