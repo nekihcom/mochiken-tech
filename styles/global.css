@@ -132,6 +132,7 @@
 }
 
 
+/* ----------- ホーム　スキルリスト ----------- */
 .skillList {
   box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #E6ECF8;
   border-radius: 12px;
@@ -178,4 +179,21 @@
 }
 .skillList__item p {
   margin-bottom: 30px;
+}
+
+
+
+/* ----------- ホーム　成果物リスト ----------- */
+.workList {
+}
+@media (min-width: 900px) {
+  .workList {
+    display:flex;
+    justify-content: space-between;
+    justify-content: center;
+  } 
+}
+
+.workList__item {
+  justify-content: center !important;
 }

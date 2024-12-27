@@ -5,7 +5,8 @@ import { Box } from "@mui/material";
 import PrimaryTemplate from "@/components/templates/PrimaryTemplate";
 import PrimaryContainer from "@/components/atoms/PrimaryContainer";
 import KeyVisual from "@/components/organisms/contents/KeyVisual";
-import HomeAbout from "../organisms/contents/HomeAbout";
+import HomeAbout from "@/components/organisms/contents/HomeAbout";
+import HomeWorks from "../organisms/contents/HomeWorks";
 
 
 const Home:FC = memo(() => {
@@ -13,18 +14,23 @@ const Home:FC = memo(() => {
     <>
       <PrimaryTemplate>
         <KeyVisual />
-        <PrimaryContainer>
+        
           <Box component={'main'}>
             <Box component={'section'} id='About' sx={{
-              my:{xs:20}
+              py:{xs:20}
             }}>
-              <HomeAbout />
+              <PrimaryContainer>
+                <HomeAbout />
+              </PrimaryContainer>
             </Box>
-            <Box component={'section'} id='Projects' sx={{
-              my:{xs:20}
-            }}></Box>
+            <Box component={'section'} id='Works' sx={{
+              py:{xs:20}
+            }}>
+              <PrimaryContainer>
+                <HomeWorks />
+              </PrimaryContainer>
+            </Box>
           </Box>
-        </PrimaryContainer>
       </PrimaryTemplate>
     </>
   )

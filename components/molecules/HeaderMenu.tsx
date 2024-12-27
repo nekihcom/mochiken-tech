@@ -1,6 +1,5 @@
 'use client';
 import { FC, memo, useState } from "react";
-import Link from 'next/link';
 import { AppBar, Box, Toolbar, IconButton, Typography, Drawer, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { teal } from "@mui/material/colors";
@@ -35,7 +34,7 @@ const HeaderMenu:FC = memo(() => {
         </ListItem>
       ))}
       <ListItem sx={{width:'auto'}}>
-        <ListItemButton component="a" href={'contact'} sx={{ borderRadius:2, textTransform:'uppercase', color:'#fff', backgroundColor:teal[700], '&:hover':{backgroundColor:teal[200]} }}>
+        <ListItemButton component="a" href={'#Contact'} sx={{ borderRadius:2, textTransform:'uppercase', color:'#fff', backgroundColor:teal[700], '&:hover':{backgroundColor:teal[200]} }}>
           <ListItemText primary={'Contact'} slotProps={{ primary: {fontWeight:700} }} />
         </ListItemButton>
       </ListItem>
@@ -54,7 +53,7 @@ const HeaderMenu:FC = memo(() => {
           </ListItem>
         ))}
         <ListItem sx={{width:'auto'}}>
-          <ListItemButton component="a" href={'contact'} sx={{ borderRadius:2, textTransform:'uppercase', color:'#fff', backgroundColor:teal[700], '&:hover':{backgroundColor:teal[200]} }}>
+          <ListItemButton component="a" href={'#Contact'} sx={{ borderRadius:2, textTransform:'uppercase', color:'#fff', backgroundColor:teal[700], '&:hover':{backgroundColor:teal[200]} }}>
             <ListItemText primary={'Contact'} slotProps={{ primary: {fontWeight:700, textAlign:'center'} }} />
           </ListItemButton>
         </ListItem>
