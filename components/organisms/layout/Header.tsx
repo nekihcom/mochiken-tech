@@ -1,15 +1,18 @@
-import { Box } from "@mui/material";
 import { FC, memo } from "react";
 
-import DrawerAppBar from "../appbar/DrawerAppBar";
+import { Box } from "@mui/material";
 
-export const Header:FC = memo(() => {
+import HeaderMenu from "@/components/molecules/HeaderMenu";
 
+const Header:FC = memo(() => {
   return (
-    <Box component={"header"}>
-      <DrawerAppBar />
-    </Box>
-    )
+    <>
+      <Box component='header'>
+        <HeaderMenu />
+      </Box>    
+    </>
+  )
 });
 
-Header.displayName = 'Header';
+Header.displayName = "Header";
+export default Header;

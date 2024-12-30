@@ -1,19 +1,17 @@
 import type { Metadata } from "next";
 import { FC, memo, ReactNode } from "react";
-import { M_PLUS_1_Code } from "next/font/google";
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 
-import "./globals.css";
+// import { M_PLUS_1_Code } from "next/font/google";
+
+import '@/styles/global.css';
 import { siteConfig } from "../config/site";
-import { Header } from "@/components/organisms/layout/Header";
-import { Footer } from "@/components/organisms/layout/Footer";
 
 
-const MPlus1CodeFont = M_PLUS_1_Code({ 
-  weight: "400", 
-  subsets: ["latin"],
-  variable: "--font-MPlus1Code"
-});
+// const MPlus1CodeFont = M_PLUS_1_Code({ 
+//   weight: "400", 
+//   subsets: ["latin"],
+//   variable: "--font-MPlus1Code"
+// });
 
 export const metadata: Metadata = {
   title: {
@@ -34,14 +32,20 @@ const RootLayout:FC<Props> = memo((props) => {
   const {children} = props;
 
   return (
-    <html lang="en">
-      <head />
-      <body className={`${MPlus1CodeFont.variable} font-MPlus1Code`}>
-        <AppRouterCacheProvider>
-          <Header />
-          {children}
-          <Footer />
-        </AppRouterCacheProvider>
+    <html>
+      <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+        {/* <link rel="preconnect" href="https://fonts.googleapis.com" /> */}
+        {/* <link rel="preconnect" href="https://fonts.gstatic.com" /> */}
+        {/* <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+        /> */}
+      </head>
+      <body 
+        // className={`${MPlus1CodeFont.variable} font-MPlus1Code`}
+      >
+        { children }
       </body>
     </html>
   );

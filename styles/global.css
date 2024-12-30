@@ -1,0 +1,310 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0
+}
+
+@media (min-width: 450px) { 
+  .is-sp {
+    display: none;
+  }
+ }
+
+
+
+/* ----------- ヘッダーメニュー ----------- */
+.hamburgerMenu__list .hamburgerMenu__list--item a {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ホバーしたら下線が表示されるアニメーション */
+.headerMenu__list .headerMenu__list--item a,
+.hamburgerMenu__list .hamburgerMenu__list--item a {
+  /*線の基点とするためrelativeを指定*/
+  position: relative;
+}
+
+.headerMenu__list .headerMenu__list--item.current a,
+.headerMenu__list .headerMenu__list--item a:hover,
+.hamburgerMenu__list .hamburgerMenu__list--item.current a,
+.hamburgerMenu__list .hamburgerMenu__list--item a:hover {
+  color:#00796B;
+}
+
+.headerMenu__list .headerMenu__list--item a::after,
+.hamburgerMenu__list .hamburgerMenu__list--item a::after {
+  content: '';
+  /*絶対配置で線の位置を決める*/
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  /*線の形状*/
+  width: 80%;
+  height: 2px;
+  background:#00796B;
+  /*アニメーションの指定*/
+  transition: all .3s;
+  transform: scale(0, 1);/*X方向0、Y方向1*/
+  transform-origin: center top;/*上部中央基点*/
+}
+
+/*現在地とhoverの設定*/
+.headerMenu__list .headerMenu__list--item.current a::after,
+.headerMenu__list .headerMenu__list--item a:hover::after,
+.hamburgerMenu__list .hamburgerMenu__list--item.current a::after,
+.hamburgerMenu__list .hamburgerMenu__list--item a:hover::after {
+  transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+.headerMenu__list .headerMenu__list--item a span,
+.hamburgerMenu__list .hamburgerMenu__list--item a span {
+  font-size: 18px;
+    /* color: #333; */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+
+
+/* ----------- スクロールダウン ----------- */
+/*スクロールダウン全体の場所*/
+.scrolldown{
+  /*描画位置※位置は適宜調整してください*/
+  position:absolute;
+  bottom:1%;
+  right:50%;
+  /*矢印の動き1秒かけて永遠にループ*/
+  animation: arrowmove 1s ease-in-out infinite;
+}
+
+/*下からの距離が変化して全体が下→上→下に動く*/
+@keyframes arrowmove{
+  0%{bottom:1%;}
+  50%{bottom:3%;}
+  100%{bottom:1%;}
+}
+
+/*Scrollテキストの描写*/
+.scrolldown span{
+  /*描画位置*/
+  position:absolute;
+  left:-20px;
+  bottom:15px;
+  /*テキストの形状*/
+  color: #000;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  /*縦書き設定*/
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+}
+
+/* 矢印の描写 */
+.scrolldown:before {
+  content:"";
+  /*描画位置  */
+  position:absolute;
+  bottom:10px;
+  right: -6px;
+  /*矢印の形状*/
+  width:2px;
+  height:20px;
+  background:#000;
+  transform:skewX(-31deg);
+}
+
+.scrolldown:after{
+  content:"";
+  /*描画位置*/
+  position: absolute;
+  bottom:10px;
+  right:0;
+  /*矢印の形状*/
+  width:2px;
+  height: 50px;
+  background:#000;
+}
+
+
+/* ----------- ホーム　スキルリスト ----------- */
+.skillList {
+  box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #E6ECF8;
+  border-radius: 12px;
+}
+@media (min-width: 900px) {
+  .skillList {
+    display: flex;
+    align-items: stretch;
+  }
+}
+
+.skillList__item {
+  padding: 50px 30px !important;
+  border-bottom: 1px solid #E6ECF8;
+  border-right: 0px solid #E6ECF8;
+  display: block !important;
+  text-align: center !important;
+}
+@media (min-width: 450px) {
+  .skillList__item {
+    display: block !important;
+    border-bottom: none;
+    border-right: 1px solid #E6ECF8;
+  }
+}
+
+.skillList__item:last-child {
+  border-right: none;
+  border-bottom: none;
+}
+
+.skillList__item {
+  text-align: center;
+  margin: 0;
+}
+
+.skillList__item h2,
+.skillList__item h3 {
+  font-weight: 700;
+  text-align: center;
+}
+.skillList__item h2 {
+  font-size: 1.5rem;
+}
+.skillList__item p {
+  margin-bottom: 30px;
+}
+
+
+
+/* ----------- ホーム　成果物リスト ----------- */
+@media (min-width: 900px) {
+  .workList {
+    display:block;
+    justify-content: space-between;
+    justify-content: center;
+  } 
+}
+
+.workList__item {
+  justify-content: center !important;
+  margin: 30px 0;
+}
+@media (min-width: 900px) {
+  .workList__item:nth-child(2) {
+    margin: 90px 0 !important;
+  }
+}
+
+.workList__card {
+  box-shadow: none !important;
+  border-radius: 0px;
+}
+@media (min-width: 900px) {
+  .workList__card {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.workList__card--media {
+  border-radius: 4px;
+}
+@media (min-width: 900px) {
+  .workList__card--media {
+    width: 50%;
+    margin-right: 30px;
+  }
+}
+
+@media (min-width: 900px) {
+  .workList__card--contents {
+    width: 50%;
+  }
+}
+
+.workList__card--text {
+  padding-bottom: 0px !important;
+}
+
+.workList__card--text h2,
+.workList__card--text p {
+  text-align: center;
+}
+@media (min-width: 900px) {
+  .workList__card--text h2,
+  .workList__card--text p {
+    text-align: start;
+  }
+}
+
+.workList__card--actions {
+  justify-content: center;
+}
+@media (min-width: 900px) {
+  .workList__card--actions {
+    justify-content: start;
+  }
+}
+
+
+
+/* ----------- ホーム　記事リスト ----------- */
+@media (min-width: 900px) {
+  .articleList {
+    display: flex;
+    justify-content: space-between;
+  } 
+  .articleList .articleList__item:nth-child(1) {
+    margin-left: 5%;
+  }
+  .articleList .articleList__item:nth-child(3) {
+    margin-right: 5%;
+  }
+}
+
+.articleList__item {
+  justify-content: center !important;
+  margin: 30px 0;
+}
+@media (min-width: 900px) {
+  .articleList__item {
+    max-width: 332px;
+  }
+}
+
+.articleList__card {
+  border: 2px solid rgba(100, 116, 139, 0.1);
+  text-decoration: none;
+}
+.articleList__card:hover {
+  opacity: 0.7;
+  transition: all 0.3s;
+}
+
+.articleList__card--media {
+  width: 328px;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.articleList__card--text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: .5rem;
+  background-color: rgba(100, 116, 139, 0.02);
+}
+
+
+
+/* ----------- ホーム　お問い合せ ----------- */
+#Contact fieldset {
+  border: none;
+}
