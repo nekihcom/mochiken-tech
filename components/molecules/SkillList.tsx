@@ -1,6 +1,6 @@
 import { FC, memo } from "react";
 
-import { List, ListItem, ListItemText, Typography } from "@mui/material";
+import { List, ListItem, Typography } from "@mui/material";
 
 const SkillList:FC = memo(() => {
   return (

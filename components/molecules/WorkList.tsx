@@ -1,7 +1,7 @@
 import { FC, memo } from 'react';
 
-import { Box, Button, Card, CardActions, CardContent, CardMedia, List, ListItem, Typography } from '@mui/material';
-import PrimaryButton from '../atoms/PrimaryButton';
+import { Box, Card, CardActions, CardContent, CardMedia, List, ListItem, Typography } from '@mui/material';
+import PrimaryButton from '@/components/atoms/PrimaryButton';
 
 
 const workList:number[] = [1, 2, 3];

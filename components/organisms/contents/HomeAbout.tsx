@@ -4,7 +4,7 @@ import { Box, Typography } from "@mui/material";
 
 import AboutText from "@/components/atoms/AboutText";
 import AboutSnsList from "@/components/molecules/AboutSnsList";
-import SkillList from "@/components/organisms/SkillList";
+import SkillList from "@/components/molecules/SkillList";
 import { h1Style } from "@/styles/style";
 
 const aboutTitleStyle = { ...h1Style, ...{mb:5, textAlign:'center'}};
