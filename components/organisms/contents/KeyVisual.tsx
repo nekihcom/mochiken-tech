@@ -1,17 +1,27 @@
-import { FC, memo } from "react";
+'use client';
+import { FC, memo, useEffect } from "react";
 
 import { Box, Typography } from "@mui/material";
-import { h1Style, pStyle } from "@/styles/style";
 import { teal } from "@mui/material/colors";
 
 import ScrollDown from "@/components/atoms/ScrollDown";
 import PrimaryContainer from "@/components/atoms/PrimaryContainer";
+import { useGetKeyvisual } from "@/hooks/useGetHomeSections";
+import { h1Style, pStyle } from "@/styles/style";
 
 
 const kvTitleStyle = { ...h1Style, ...{letterSpacing:1, mb:3, fontSize:'48px'}};
 const kvTextStyle = { ...pStyle, ...{fontSize:'20px'} };
 
 const KeyVisual:FC = memo(() => {
+  // const { getKeyvisual, loading, keyvisual } = useGetKeyvisual();
+  const { getKeyvisual, keyvisual } = useGetKeyvisual();
+
+  useEffect(() => {
+    getKeyvisual();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       <Box component='section' sx={{
@@ -28,7 +38,7 @@ const KeyVisual:FC = memo(() => {
                 <Typography component={'p'} sx={kvTextStyle}>こちらはエンジニアMochikenのポートフォリオサイトです。<br />これまでの実績やスキルを掲載しておりますので、<br/>ぜひご参考にしていただければ幸いです。</Typography>
               </Box>
               <Box sx={{textAlign:'center'}}>
-                <Box component="img"sx={{maxWidth:'330px', width: '100%'}} src="/me.png" />
+                <Box component="img"sx={{maxWidth:'330px', width: '100%'}} src={ keyvisual?.field_avatar } />
               </Box>
             </Box>
           </Box>
