@@ -40,7 +40,7 @@ const Home:FC = memo(() => {
           </Box>
           <Box component={'section'} id='Contact' sx={{
             py:{xs:10},
-            background: 'linear-gradient(to right, rgba(245, 245, 245, 0.8), rgba(245, 245, 245, 0.8)), url(/bgimage.svg)'
+            background: 'linear-gradient(to right, rgba(245, 245, 245, 0.8), rgba(245, 245, 245, 0.8)), url(https://api.mochiken.blog/sites/default/files/2024-12/bgimage.svg)'
           }}>
             <PrimaryContainer>
               <HomeContact />
