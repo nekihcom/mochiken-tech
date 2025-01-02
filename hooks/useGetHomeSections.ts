@@ -3,7 +3,7 @@ import axios from "axios";
 import { useCallback, useState } from "react";
 
 import { apiSource } from "@/config/site";
-import { Keyvisual, Profile } from "@/type/api";
+import { Keyvisual, Profile, Work } from "@/type/api";
 
 
 export const useGetKeyvisual = () => {
@@ -16,8 +16,8 @@ export const useGetKeyvisual = () => {
         .then((res) => {
           let fetchData = res.data[0];
 
-          const avatartAbsolutePath = apiSource + fetchData.field_avatar;
-          fetchData.field_avatar = avatartAbsolutePath;
+          const avatarAbsolutePath = apiSource + fetchData.field_avatar;
+          fetchData.field_avatar = avatarAbsolutePath;
 
           const stringBody = new DOMParser().parseFromString(fetchData.body, "text/html").body.firstElementChild?.innerHTML.toString();
           const splitedBody = stringBody && stringBody.split('<br>');
@@ -38,7 +38,6 @@ export const useGetKeyvisual = () => {
       keyvisual
     }
 }
-
 
 
 export const useGetProfile = () => {
@@ -63,5 +62,34 @@ export const useGetProfile = () => {
   return { 
     getProfile, 
     profile
+  }
+}
+
+
+export const useGetWorks = () => {
+  const [works, setWorks] = useState<Array<Work | null>>([]);
+
+  const getWorks = useCallback(() => {
+      axios.get('https://api.mochiken.blog/api/works')
+      .then((res) => {
+        res.data.map((r:Work) => (
+          r.field_thumbnail = apiSource + r.field_thumbnail
+        ));
+
+        // let fetchData = res.data[0];
+
+        // const thumbnailAbsolutePath = apiSource + fetchData.field_thumbnail;
+        // fetchData.field_thumbnail = thumbnailAbsolutePath;
+
+        setWorks(res.data);
+      })
+      .catch(() => {
+      })
+      .finally(() => {
+      });
+  }, []);
+  return { 
+    getWorks, 
+    works
   }
 }
