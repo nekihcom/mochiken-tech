@@ -289,9 +289,14 @@
 }
 
 .articleList__card--media {
-  width: 328px;
+  width: auto;
   max-width: 100%;
   object-fit: cover;
+}
+@media (min-width: 900px) {
+  .articleList__card--media {
+    width: 332px;
+  }
 }
 
 .articleList__card--text {
