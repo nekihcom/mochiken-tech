@@ -17,3 +17,12 @@ export type Work = {
   field_thumbnail: string;
   field_link: string;
 }
+
+
+export type Article = {
+  title: string;
+  field_link: string;
+  field_thumbnail: string;
+  field_source: string;
+  field_postdate: string;
+}
