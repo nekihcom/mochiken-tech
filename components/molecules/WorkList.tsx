@@ -3,7 +3,6 @@ import { FC, memo, useEffect } from 'react';
 
 import { Box, Card, CardActions, CardContent, CardMedia, List, ListItem, Typography } from '@mui/material';
 
-import PrimaryButton from '@/components/atoms/PrimaryButton';
 import { useGetWorks } from '@/hooks/useGetHomeSections';
 import { teal } from '@mui/material/colors';
 
@@ -36,8 +35,7 @@ const WorkList:FC = memo(() => {
                   <Typography component='p'>{ work?.field_discription }</Typography>
                 </CardContent>
                 <CardActions className='workList__card--actions'>
-                  <PrimaryButton size='large'>詳しく見てみる</PrimaryButton>
-                  {/* <Box component={'a'} href={ work?.field_link } target={'_blank'} sx={{color:'#fff', backgroundColor:teal[700], width:{xs:'100%', md:'auto'}}}>詳しくみてみる</Box> */}
+                  <Box component={'a'} href={ work?.field_link } target={'_blank'} sx={{py:1, px:2, textDecoration:'none', color:'#fff', backgroundColor:teal[700], width:{xs:'100%', md:'auto'}, borderRadius:2, textTransform:'uppercase', '&:hover':{backgroundColor:teal[200], transition:'all .3s'}}}>詳しくみてみる</Box>
                 </CardActions>
               </Box>
             </Card>

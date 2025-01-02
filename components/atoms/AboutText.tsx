@@ -8,10 +8,6 @@ import { useGetProfile } from "@/hooks/useGetHomeSections";
 
 const aboutTextStyle = { ...pStyle, ...{mr:{xs:0, md:3}} };
 
-const aboutText = `関東出身のエンジニア。<br/>\
-          大学でアルゴリズムやプログラミング言語、自然言語処理を学んだのち、<br/>\
-          日系SIerでWEBサイトの構築やBIツールの開発に従事。<br/>\
-          個人としてもWEBアプリの開発やITに関するメンターに携わっています。<br />`;
 
 const AboutText:FC = memo(() => {
   const { getProfile, profile } = useGetProfile();
