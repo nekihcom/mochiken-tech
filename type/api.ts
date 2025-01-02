@@ -1,7 +1,12 @@
-import { ReactNode } from "react";
-
 export type Keyvisual = {
   title: string;
-  body: ReactNode;
+  body: Array<string>;
   field_avatar: string;
+}
+
+
+export type Profile = {
+  body: Array<string>;
+  field_job: string;
+  field_hobby: string;
 }

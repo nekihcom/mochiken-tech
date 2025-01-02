@@ -17,10 +17,16 @@ const KeyVisual:FC = memo(() => {
   // const { getKeyvisual, loading, keyvisual } = useGetKeyvisual();
   const { getKeyvisual, keyvisual } = useGetKeyvisual();
 
+
   useEffect(() => {
     getKeyvisual();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  let bodyArray:Array<string> = []; 
+  if(keyvisual && keyvisual.body) {
+      bodyArray = keyvisual.body;
+  }
 
   return (
     <>
@@ -35,7 +41,11 @@ const KeyVisual:FC = memo(() => {
             <Box sx={{display:{md:'flex'}, alignItems:{md:'center'}, justifyContent:'center'}}>
               <Box sx={{textAlign:{xs:'center', md:'start'}}}>
                 <Typography component={'h1'} sx={kvTitleStyle}>👋 Hey, <br className='is-sp' /><Box component={'span'} sx={{color:teal[700]}}>{`I'm Mochiken`}</Box></Typography>
-                <Typography component={'p'} sx={kvTextStyle}>こちらはエンジニアMochikenのポートフォリオサイトです。<br />これまでの実績やスキルを掲載しておりますので、<br/>ぜひご参考にしていただければ幸いです。</Typography>
+                <Box>
+                  { bodyArray.map((body:string, index:number) => (
+                    <Typography key={index} component={'p'} sx={kvTextStyle}>{ body }</Typography>
+                  )) }
+                </Box>
               </Box>
               <Box sx={{textAlign:'center'}}>
                 <Box component="img"sx={{maxWidth:'330px', width: '100%'}} src={ keyvisual?.field_avatar } />
