@@ -15,8 +15,6 @@ const WorkList:FC = memo(() => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-  console.log(works);
-
   return (
     <>
       <List className='workList'>
