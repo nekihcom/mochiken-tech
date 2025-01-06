@@ -313,3 +313,8 @@
 #Contact fieldset {
   border: none;
 }
+
+#contactForm {
+  width: 100%;
+}
+
