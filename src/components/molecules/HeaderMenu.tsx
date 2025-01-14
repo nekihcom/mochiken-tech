@@ -82,8 +82,8 @@ const HeaderMenu = (props: Props) => {
       <CssBaseline />
       <HideOnScroll {...props}>
         <AppBar component="nav">
-          <Toolbar>
-            <GlobalContainer>
+          <GlobalContainer>
+            <Toolbar>
               <Typography
                 variant="h6"
                 component="h1"
@@ -111,8 +111,8 @@ const HeaderMenu = (props: Props) => {
               >
                 <MenuIcon />
               </IconButton>
-            </GlobalContainer>
-          </Toolbar>
+            </Toolbar>
+          </GlobalContainer>
         </AppBar>
       </HideOnScroll>
       <nav>
