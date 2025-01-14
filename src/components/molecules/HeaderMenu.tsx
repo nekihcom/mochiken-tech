@@ -96,7 +96,7 @@ const HeaderMenu = (props: Props) => {
             
               <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                 {navItems.map((item) => (
-                  <Button key={item.path} sx={{ color: '#fff' }}>
+                  <Button key={item.path} sx={{ color:'#fff', fontFamily:'inherit'  }}>
                     {item.title}
                   </Button>
                 ))}
