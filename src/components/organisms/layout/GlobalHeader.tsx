@@ -2,9 +2,8 @@ import GlobalContainer from "./GlobalContainer";
 import Link from "next/link";
 
 const GlobalHeader = () => {
-
   return (
-    <header className="">
+    <header className="bg-slate-200 h-20">
       <GlobalContainer>
         <nav>
           <ul className="flex justify-around">
