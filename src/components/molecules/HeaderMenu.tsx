@@ -1,24 +1,37 @@
 'use client';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import { useState } from 'react';
 import Link from 'next/link';
-import { navItems } from '@/data/site';
+import { AppBar, Box, CssBaseline, Drawer, IconButton, List, ListItem, ListItemButton, Toolbar, Typography, Slide } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
-import { Slide } from '@mui/material';
-import GlobalContainer from '../organisms/layout/GlobalContainer';
+import { grey, teal } from '@mui/material/colors';
+
+import GlobalContainer from '@/components/organisms/layout/GlobalContainer';
+import { navItems } from '@/data/site';
+
+const ContactButton = () => {
+  return (
+    <>
+      <Box
+        component="a"
+        href='#contact'
+        sx={{
+          display: "inline-block",
+          backgroundColor: teal[500],
+          color: "#fff",
+          fontWeight: "bold",
+          textDecoration: "none",
+          padding: "12px 24px",
+          borderRadius: 1,
+          "&:hover": {
+            opacity:0.7,
+            transition:'all .3s'
+          },
+        }}
+      >CONTACT</Box>
+    </>
+  )
+}
 
 interface Props {
   /**
@@ -42,18 +55,23 @@ const HeaderMenu = (props: Props) => {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      {/* <Typography variant="h6" sx={{ my: 2 }}>
-        Mochiken.tech
-      </Typography>
-      <Divider /> */}
       <List>
         {navItems.map((item) => (
-          <ListItem key={item.path} disablePadding>
+          <ListItem key={item.path} disablePadding sx={{width:'90%', margin:'0 auto'}}>
             <ListItemButton>
-              <Link href={`${item.path}`} className='w-full'>{item.title}</Link>
+              <Link href={`${item.path}`} className='w-full text-zinc-800 font-bold uppercase'>{item.title}</Link>
             </ListItemButton>
           </ListItem>
         ))}
+        <ListItem disablePadding sx={{width:'90%', margin:'0 auto'}}>
+          <ListItemButton sx={{backgroundColor: teal[500], "&:hover": {
+            backgroundColor: teal[500],
+            opacity:'0.7',
+            transition:'all .3s'
+          }}}>
+            <Link href={`#contact`} className='w-full font-bold uppercase text-white'>CONTACT</Link>
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );
@@ -62,9 +80,6 @@ const HeaderMenu = (props: Props) => {
 
   const HideOnScroll = (props: Props) => {
     const { children, window } = props;
-    // Note that you normally won't need to set the window ref as useScrollTrigger
-    // will default to window.
-    // This is only being set here because the demo is in an iframe.
     const trigger = useScrollTrigger({
       target: window ? window() : undefined,
     });
@@ -78,36 +93,37 @@ const HeaderMenu = (props: Props) => {
   
   return (
     <>
-    <Box sx={{ display: 'flex' }}>
+    <Box className='flex'>
       <CssBaseline />
       <HideOnScroll {...props}>
-        <AppBar component="nav">
+        <AppBar component="nav" sx={{backgroundColor:'#fafafa'}}>
           <GlobalContainer>
             <Toolbar>
               <Typography
                 variant="h6"
                 component="h1"
+                className='text-zinc-800'
                 sx={{ 
                   flexGrow: 1, 
-                  fontFamily: 'inherit'
               }}>
-                <Link href={'/'}>Mochiken.tech</Link>
+                <Link href={'/'} className='font-bold tracking-tighter' >Mochiken.tech</Link>
               </Typography>
             
-              <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+              <Box sx={{ display: { xs: 'none', md: 'block' }, color:grey[900], fontWeight:700, }}>
                 {navItems.map((item) => (
-                  <Button key={item.path} sx={{ color:'#fff', fontFamily:'inherit'  }}>
+                  <Link key={item.path} href={item.path} className='underline-animation mr-7 uppercase'>
                     {item.title}
-                  </Button>
+                  </Link>
                 ))}
+                <ContactButton />
               </Box>
 
               <IconButton
-                color="inherit"
+                className='text-zinc-800'
                 aria-label="open drawer"
                 edge="start"
                 onClick={handleDrawerToggle}
-                sx={{ mr: 2, display: { sm: 'none' } }}
+                sx={{ mr: 2, display: { md: 'none' } }}
               >
                 <MenuIcon />
               </IconButton>
@@ -123,10 +139,10 @@ const HeaderMenu = (props: Props) => {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true, 
           }}
           sx={{
-            display: { xs: 'block', sm: 'none' },
+            display: { xs: 'block', md: 'none' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
           }}
         >

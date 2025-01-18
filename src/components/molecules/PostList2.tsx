@@ -12,7 +12,7 @@ const fetchPosts = async () => {
 
 const postPromise = fetchPosts();
 
-export const PostList = () => {
+export const PostList2 = () => {
   const posts = use(postPromise);
 
   return (

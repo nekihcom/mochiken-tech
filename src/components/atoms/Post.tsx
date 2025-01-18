@@ -1,5 +1,6 @@
-import { ExamplePost } from "@/type/type";
 import { FC } from "react";
+
+import { ExamplePost } from "@/type/type";
 
 
 type Props = {

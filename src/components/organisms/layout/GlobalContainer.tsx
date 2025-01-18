@@ -1,4 +1,5 @@
 import { FC, ReactNode } from "react";
+import { Container } from "@mui/material";
 
 type Props = {
   children: ReactNode;
@@ -8,9 +9,9 @@ const GlobalContainer:FC<Props> = (props) => {
   const { children } = props;
 
   return (
-    <div className="max-w-90per mx-auto">
+    <Container maxWidth="lg">
       { children }
-    </div>
+    </Container>
   );
 }
 

@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+
 import HeaderMenu from "@/components/molecules/HeaderMenu";
 
 const GlobalHeader = () => {

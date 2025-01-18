@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export type ExamplePost = {
   body: string;
   id: number;
@@ -8,4 +10,22 @@ export type ExamplePost = {
 export type NavItem = {
   title: string;
   path: string;
+}
+
+export type SnsLinkCard = {
+  service: string;
+  color?: string;
+  username: string;
+  icon?: ReactNode;
+}
+
+
+export type Experience = {
+  term: ReactNode;
+  description: ReactNode;
+}
+
+export type Certificate = {
+  date: string;
+  certificateName: string;
 }
