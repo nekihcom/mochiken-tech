@@ -37,18 +37,21 @@ export const navItems: Array<NavItem> = [
 export const SnsLinks: Array<SnsLinkCard> = [
   {
     service: 'X',
+    link: 'https://x.com/nekihcom',
     color: 'black',
     username: '@nekihcom',
     icon: <XIcon sx={{color:'white'}} />
   },
   {
     service: 'GitHub',
+    link: 'https://github.com/nekihcom',
     color: grey[700],
     username: '@nekihcom',
     icon: <GitHubIcon sx={{color:'white'}} />
   },
   {
     service: 'Qiita',
+    link: 'https://qiita.com/nekihcom',
     color: green[800],
     username: '@nekihcom',
     icon: <Image src={"/qiita.png"} alt={"Qiita"} width={24} height={24} />
@@ -59,11 +62,13 @@ export const SnsLinks: Array<SnsLinkCard> = [
 export const workExperience: Array<Experience> = [
   {
     term: <>2022/04<br className="md:hidden"/>〜現在</>,
-    description: <>Udemy講座ティーチングアシスタント</>
+    description: <>Udemy講座ティーチングアシスタント</>,
+    isDoing: true
   },
   {
     term: <>2019/04<br className="md:hidden"/>〜現在</>,
-    description: <>日系SIerにてプロジェクトリーダーとして各種案件に従事</>
+    description: <>日系SIerにてプロジェクトリーダーとして各種案件に従事</>,
+    isDoing: true
   },
   {
     term: <>2019/03</>,
@@ -74,20 +79,20 @@ export const workExperience: Array<Experience> = [
 
 export const certificates: Array<Certificate> = [
   {
-    date: '2019/06',
-    certificateName: '基本情報技術者'
-  },
-  {
-    date: '2020/12',
-    certificateName: '応用情報情報技術者'
+    date: '2022/08',
+    certificateName: 'Drupal9 SiteBuilder'
   },
   {
     date: '2022/07',
     certificateName: 'TOEIC 645点'
   },
   {
-    date: '2022/08',
-    certificateName: 'Drupal9 SiteBuilder'
+    date: '2020/12',
+    certificateName: '応用情報情報技術者'
+  },
+  {
+    date: '2019/06',
+    certificateName: '基本情報技術者'
   },
 ]
 

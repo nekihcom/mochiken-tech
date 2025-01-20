@@ -57,7 +57,7 @@ const Profile = () => {
           }}>
             {SnsLinks.map((sns) => (
               <Grid2 key={sns.service} size={{xs:12}} sx={{mb:{xs:1, md:0}, mr:{sm:1, md:0}}}>
-                <SnsLinkCard service={sns.service} color={sns.color} username={sns.username} icon={sns.icon} />
+                <SnsLinkCard service={sns.service} link={sns.link} color={sns.color} username={sns.username} icon={sns.icon} />
               </Grid2>
             ))}
           </Grid2>

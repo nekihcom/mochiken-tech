@@ -4,7 +4,7 @@ import HomeSectionContainer from "@/components/organisms/layout/HomeSectionConta
 import { bizFontFamily, oswaldFontFamily } from "@/data/fonts";
 
 
-const HomeContentTmpl = () => {
+const HomeContent = () => {
   return (
     <>
     <Box sx={{
@@ -12,7 +12,7 @@ const HomeContentTmpl = () => {
       backgroundAttachment: 'fixed'
     }}>
       <HomeSectionContainer>
-        <Box sx={{maxWidth: 800, mx: "auto", py: 6, px: 2, textAlign: "center"}}>
+        <Box sx={{maxWidth: 800, mx: "auto", py: {xs:0, md:6}, px: 2, textAlign: "center"}}>
           {/* 見出し */}
           <Typography id={'contact'} component={'h2'} sx={{ mb:2, fontSize:48, fontFamily:oswaldFontFamily }}>Send me a message!</Typography>
           <Typography variant="body1" color="text.secondary" sx={{ fontFamily:bizFontFamily, mb:6 }}>
@@ -60,7 +60,7 @@ const HomeContentTmpl = () => {
             </Grid2>
           </Grid2> */}
           <Container sx={{margin:'0 auto'}}>
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfvODmdEs3i29skHAv0flvXZt_4pdB7qvfTjsv2JTn5nQ7Obw/viewform?embedded=true" width="640" height="900">読み込んでいます…</iframe>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfvODmdEs3i29skHAv0flvXZt_4pdB7qvfTjsv2JTn5nQ7Obw/viewform?embedded=true" width="100%" height="900">読み込んでいます…</iframe>
           </Container>
         </Box>
       </HomeSectionContainer>
@@ -69,4 +69,4 @@ const HomeContentTmpl = () => {
   );
 }
 
-export default HomeContentTmpl;
+export default HomeContent;

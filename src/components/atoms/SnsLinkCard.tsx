@@ -5,17 +5,18 @@ import { bizFontFamily } from "@/data/fonts";
 
 type Props = {
   service: string;
+  link: string;
   color?: string;
   username: string;
   icon?: ReactNode;
 }
 
 const SnsLinkCard = (props:Props) => {
-  const { service, color='#000', username, icon=null } = props;
+  const { service, link, color='#000', username, icon=null } = props;
 
   return (
     <>
-      <Link href='https://x.com/nekihcom' target='_blank'>
+      <Link href={link} target='_blank'>
         <Box
           sx={{
             mx:0.5,

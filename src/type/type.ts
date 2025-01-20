@@ -14,6 +14,7 @@ export type NavItem = {
 
 export type SnsLinkCard = {
   service: string;
+  link: string;
   color?: string;
   username: string;
   icon?: ReactNode;
@@ -23,6 +24,7 @@ export type SnsLinkCard = {
 export type Experience = {
   term: ReactNode;
   description: ReactNode;
+  isDoing?: boolean;
 }
 
 export type Certificate = {

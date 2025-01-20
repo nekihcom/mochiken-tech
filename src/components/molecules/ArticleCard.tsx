@@ -2,7 +2,6 @@ import { bizFontFamily } from "@/data/fonts";
 import { Box, Card, CardActionArea, CardContent, CardMedia, Grid2, Link, Typography } from "@mui/material";
 
 type Props = {
-  id: number;
   image: string;
   path: string;
   title: string;
@@ -11,7 +10,7 @@ type Props = {
 };
 
 const ArticleCard = (props:Props) => {
-  const { id, image, path, title, source, date} = props;
+  const { image, path, title, source, date} = props;
   return (
     <Grid2
       size={{xs:12, sm:6, md:4}}

@@ -6,12 +6,9 @@ import ArticleCard from "@/components/molecules/ArticleCard";
 
 // 例として表示するカードデータを配列で用意
 const cardData = [
-  { id: 1, title: "Card 1", description: "カード1の説明文", path:'https://www.yahoo.co.jp', source:'Service', date:'2025/01/16' },
-  { id: 2, title: "Card 2 Card 2 Card 2 Card 2 Card 2 Card 2 Card 2 Card 2", description: "カード2の説明文", path:'https://www.yahoo.co.jp', source:'Service', date:'2025/01/16' },
-  { id: 3, title: "Card 3", description: "カード3の説明文", path:'https://www.yahoo.co.jp', source:'Service', date:'2025/01/16' },
-  { id: 4, title: "Card 4", description: "カード4の説明文", path:'https://www.yahoo.co.jp', source:'Service', date:'2025/01/16' },
-  { id: 5, title: "Card 5", description: "カード5の説明文", path:'https://www.yahoo.co.jp', source:'Service', date:'2025/01/16' },
-  { id: 6, title: "Card 6", description: "カード6の説明文", path:'https://www.yahoo.co.jp', source:'Service', date:'2025/01/16' },
+  { title: "ローカル環境にDrupal11をインストールする", image:'/articles/article1.png', path:'https://www.mochiken.blog/archives/42/', source:'Blog', date:'2025/01/12' },
+  { title: "Drupalとは？　機能や特徴、メリット/デメリットをご紹介！", image:'/articles/article3.png', path:'https://www.mochiken.blog/archives/35/', source:'Blog', date:'2025/01/07' },
+  { title: "【Javascript】JSフレームワーク等を学ぶなら覚えておきたいコト", image:'/articles/article2.jpeg', path:'https://qiita.com/nekihcom/items/8a0f71252bc906154783', source:'Qiita', date:'2023/04/18' },
   // 必要に応じてカードを追加
 ];
 
@@ -21,11 +18,11 @@ const Articles = () => {
       <HomeSectionContainer title={'Articles'} anchorLink={'articles'}>
         <Grid2
           container 
-          spacing={2} // カード同士の余白
-          wrap="wrap" // 折り返しを許可
+          spacing={2}
+          wrap="wrap"
         >
           {cardData.map((card) => (
-            <ArticleCard key={card.id} id={card.id} image={"/800x600.png"} path={card.path} title={card.title} source={card.source} date={card.date} />
+            <ArticleCard key={card.title} image={card.image} path={card.path} title={card.title} source={card.source} date={card.date} />
           ))}
         </Grid2>
       </HomeSectionContainer>
