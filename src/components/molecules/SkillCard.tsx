@@ -4,6 +4,7 @@ import { Box, Grid2, Typography } from "@mui/material";
 import { grey, teal } from "@mui/material/colors";
 
 import Tag from "@/components/atoms/Tag";
+import { oswaldFontFamily } from "@/data/fonts";
 
 
 type Props = {
@@ -14,9 +15,6 @@ type Props = {
 }
 const SkillCard = (props:Props) => {
   const { title, list, icon, isMiddle=false } = props;
-
-  
-
   return (
     <>
       <Grid2 size={{xs:12, md:4}}
@@ -47,7 +45,7 @@ const SkillCard = (props:Props) => {
             { icon }
           </Box>
         </Box> 
-        <Typography component={'h4'} sx={{mb:2, fontSize:20, textAlign:'center'}}>{ title }</Typography>
+        <Typography component={'h4'} sx={{fontFamily:oswaldFontFamily, mb:2, fontSize:20, textAlign:'center'}}>{ title }</Typography>
         <Box sx={{px:2,display:'flex', flexWrap:'wrap', justifyContent:'center'}}>
           {list && list.map((skill, index) => <Tag key={index} label={skill} />)}
         </Box>

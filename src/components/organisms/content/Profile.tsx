@@ -9,12 +9,13 @@ import HomeSectionContainer from "@/components/organisms/layout/HomeSectionConta
 import SnsLinkCard from "@/components/atoms/SnsLinkCard";
 import SkillCard from "@/components/molecules/SkillCard";
 import { backendSkillsList, certificates, devopsSkillsList, frontendSkillsList, SnsLinks, workExperience } from "@/data/site";
+import { bizFontFamily, oswaldFontFamily } from "@/data/fonts";
 
 
 const Profile = () => {
   return (
     <>
-      <HomeSectionContainer title={'about me'}>
+      <HomeSectionContainer title={'about me'} anchorLink={'profile'}>
         <Grid2 container spacing={2} sx={{maxWidth:1000, justifyContent:'space-between'}}>
           {/* プロフィール画像 */}
           <Grid2 size={{xs:12, md:3}} sx={{mb:2, display:'flex', justifyContent:'center', alignItems:'center'}}>
@@ -24,24 +25,24 @@ const Profile = () => {
           {/* 名前や職業など */}
           <Grid2 size={{xs:12, md:6}}  sx={{width:{xs:'80%', md:'auto'}, mx:{xs:'auto', md:'0'}}}>
             <Box mb={2} sx={{display:'flex', justifyContent:'center', alignItems:'center'}}>
-              <Typography component={'h3'} sx={{fontWeight:700, fontSize:28, color:teal[700]}}>Mochiken</Typography>
-              <Typography component={'h4'} sx={{fontSize:20, color:"black"}}>(@nekihcom)</Typography>
+              <Typography component={'h3'} sx={{fontFamily:bizFontFamily, fontWeight:700, fontSize:28, color:teal[700]}}>Mochiken</Typography>
+              <Typography component={'h4'} sx={{fontFamily:bizFontFamily, fontSize:20, color:"black"}}>(@nekihcom)</Typography>
             </Box>
             <Box mb={2} >
-              <Typography component={'p'} sx={{fontWeight:700, fontSize:12}}>職種</Typography>
-              <Typography component={'p'}>システムエンジニア / <br className="lg:hidden"/>Webエンジニア</Typography>
+              <Typography component={'p'} sx={{fontFamily:bizFontFamily, fontWeight:700, fontSize:12}}>職種</Typography>
+              <Typography component={'p'} sx={{fontFamily:bizFontFamily}}>システムエンジニア / <br className="lg:hidden"/>Webエンジニア</Typography>
             </Box>
             <Box mb={2} >
-              <Typography component={'p'} sx={{fontWeight:700, fontSize:12}}>所属</Typography>
-              <Typography component={'p'}>日系SIer</Typography>
+              <Typography component={'p'} sx={{fontFamily:bizFontFamily, fontWeight:700, fontSize:12}}>所属</Typography>
+              <Typography component={'p'} sx={{fontFamily:bizFontFamily}}>日系SIer</Typography>
             </Box>
             <Box mb={2} >
-              <Typography component={'p'} sx={{fontWeight:700, fontSize:12}}>好きな技術</Typography>
-              <Typography component={'p'}>Python / Drupal </Typography>
+              <Typography component={'p'} sx={{fontFamily:bizFontFamily, fontWeight:700, fontSize:12}}>好きな技術</Typography>
+              <Typography component={'p'} sx={{fontFamily:bizFontFamily}}>Python / Drupal </Typography>
             </Box>
             <Box mb={2} >
-              <Typography component={'p'} sx={{fontWeight:700, fontSize:12}}>趣味</Typography>
-              <Typography component={'p'}>野球 / バドミントン / 個人開発</Typography>
+              <Typography component={'p'} sx={{fontFamily:bizFontFamily, fontWeight:700, fontSize:12}}>趣味</Typography>
+              <Typography component={'p'} sx={{fontFamily:bizFontFamily}}>野球 / バドミントン / 個人開発</Typography>
             </Box>
           </Grid2>
 
@@ -64,7 +65,7 @@ const Profile = () => {
 
         {/* スキル */}
         <Container sx={{my:10}}>
-          <Typography component={'h3'} sx={{fontSize:28, textAlign:'center'}}>Skill</Typography>
+          <Typography component={'h3'}sx={{fontFamily:oswaldFontFamily, fontWeight:700, fontSize:28, textAlign:'center'}}>Skill</Typography>
           <Grid2 container sx={{
             my:3, p:2, border:`1px solid ${grey[300]}`, borderRadius:3,
             boxShadow: '0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #E6ECF8'
@@ -77,14 +78,14 @@ const Profile = () => {
 
         {/* 経歴 */}
         <Container sx={{my:10}}>
-          <Typography component={'h3'} sx={{fontSize:28, textAlign:'center'}}>Work Experience</Typography>
+          <Typography component={'h3'}sx={{fontFamily:oswaldFontFamily, fontWeight:700, fontSize:28, textAlign:'center'}}>Work Experience</Typography>
           <TableContainer sx={{my:3, maxWidth:600, mr:'auto', ml:'auto'}}>
             <Table size="small">
               <TableBody>
                 { workExperience && workExperience.map((experience, index) => (
                   <TableRow key={index}>
-                    <TableCell component={'th'} align={'left'} sx={{fontWeight:700}}>{ experience.term }</TableCell>
-                    <TableCell align={'left'}>{ experience.description }</TableCell>
+                    <TableCell component={'th'} align={'left'} sx={{fontFamily:bizFontFamily, fontWeight:700}}>{ experience.term }</TableCell>
+                    <TableCell align={'left'} sx={{fontFamily:bizFontFamily}}>{ experience.description }</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -94,14 +95,14 @@ const Profile = () => {
 
         {/* 資格 */}
         <Container sx={{my:10}}>
-          <Typography component={'h3'} sx={{fontSize:28, textAlign:'center'}}>Certificate</Typography>
+          <Typography component={'h3'} sx={{fontFamily:oswaldFontFamily, fontWeight:700, fontSize:28, textAlign:'center'}}>Certificate</Typography>
           <TableContainer sx={{my:3, maxWidth:600, mr:'auto', ml:'auto'}}>
             <Table size="small">
               <TableBody>
                 { certificates && certificates.map((certificate, index) => (
                   <TableRow key={index}>
-                    <TableCell component={'th'} align={'left'} sx={{fontWeight:700}}>{ certificate.date }</TableCell>
-                    <TableCell align={'left'}>{ certificate.certificateName }</TableCell>
+                    <TableCell component={'th'} align={'left'} sx={{fontFamily:bizFontFamily, fontWeight:700}}>{ certificate.date }</TableCell>
+                    <TableCell align={'left'} sx={{fontFamily:bizFontFamily}}>{ certificate.certificateName }</TableCell>
                   </TableRow>
                 ))}
               </TableBody>

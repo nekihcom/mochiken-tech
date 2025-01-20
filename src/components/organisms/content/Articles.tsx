@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { Box, Card, CardActionArea, CardContent, CardMedia, Grid2, Typography } from "@mui/material";
+import { Grid2 } from "@mui/material";
 
 import HomeSectionContainer from "@/components/organisms/layout/HomeSectionContainer";
+import ArticleCard from "@/components/molecules/ArticleCard";
 
 
 // 例として表示するカードデータを配列で用意
@@ -18,45 +18,14 @@ const cardData = [
 const Articles = () => {
   return (
     <>
-      <HomeSectionContainer title={'title'}>
+      <HomeSectionContainer title={'Articles'} anchorLink={'articles'}>
         <Grid2
           container 
           spacing={2} // カード同士の余白
           wrap="wrap" // 折り返しを許可
         >
           {cardData.map((card) => (
-            <Grid2
-              key={card.id}
-              size={{xs:12, sm:6, md:4}}
-              sx={{display:'flex', justifyContent:'center'}}
-            >
-              <Card sx={{maxWidth:373}}>
-                <CardActionArea>
-                  <Link href={card.path}>
-                    <CardMedia
-                      component="img"
-                      height="140"
-                      image="/800x600.png"
-                      alt="green iguana"
-                    />
-                    <CardContent>
-                      <Box sx={{
-                        display:'flex',
-                        flexDirection:'column',
-                        justifyContent:'space-between',
-                        height:'80px'
-                      }}>
-                        <Typography component={'h3'} sx={{fontWeight:700}}>{card.title}</Typography>
-                        <Box sx={{display:'flex', justifyContent:'space-between'}}>
-                          <Typography component={'p'}>{card.source}</Typography>
-                          <Typography component={'p'}>{card.date}</Typography>
-                        </Box>
-                      </Box>
-                    </CardContent>
-                  </Link>
-                </CardActionArea>
-              </Card>
-            </Grid2>
+            <ArticleCard key={card.id} id={card.id} image={"/800x600.png"} path={card.path} title={card.title} source={card.source} date={card.date} />
           ))}
         </Grid2>
       </HomeSectionContainer>

@@ -1,3 +1,4 @@
+import { bizFontFamily } from "@/data/fonts";
 import { Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
 
@@ -11,6 +12,7 @@ const Tag = (props:Props) => {
   return (
     <>
       <Typography component={'p'} sx={{
+        fontFamily:bizFontFamily, 
         fontWeight:700,
         py: 1,
         px: 2,

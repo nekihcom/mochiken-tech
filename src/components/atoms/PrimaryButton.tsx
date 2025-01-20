@@ -1,3 +1,4 @@
+import { bizFontFamily } from "@/data/fonts";
 import { Box } from "@mui/material";
 import { teal } from "@mui/material/colors";
 
@@ -16,6 +17,7 @@ const PrimaryButton = (props:Props) => {
         href={href}
         target={isTarget}
         sx={{
+          fontFamily:bizFontFamily, 
           mt: 3,
           display: "inline-block",
           backgroundColor: teal[500],

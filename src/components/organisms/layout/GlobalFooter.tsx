@@ -6,6 +6,7 @@ import XIcon from '@mui/icons-material/X';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
 import GlobalContainer from "@/components/organisms/layout/GlobalContainer";
+import { bizFontFamily } from "@/data/fonts";
 
 const GlobalFooter = () => {
 
@@ -32,7 +33,7 @@ const GlobalFooter = () => {
         </List>
 
         {/* Copyright */}
-        <Typography className="text-center" sx={{fontSize:{xs:10, lg:14}}}>
+        <Typography className="text-center" sx={{fontFamily:bizFontFamily, fontSize:{xs:10, lg:14}}}>
           &copy; Copyright {new Date().getFullYear()}. Made by <a href='/' className="underline font-bold">Masaya Kemmochi</a>
         </Typography>
       </GlobalContainer>

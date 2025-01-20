@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Link from "next/link";
 import { Box, Typography } from "@mui/material";
+import { bizFontFamily } from "@/data/fonts";
 
 type Props = {
   service: string;
@@ -32,8 +33,8 @@ const SnsLinkCard = (props:Props) => {
           }}
         >
           <Box>
-            <Typography component={'p'} sx={{fontSize:18, color:'white'}}>{service}</Typography>
-            <Typography component={'p'} sx={{fontSize:22, color:'white', fontWeight:700}}>{username}</Typography>
+            <Typography component={'p'} sx={{fontFamily:bizFontFamily, fontSize:18, color:'white'}}>{service}</Typography>
+            <Typography component={'p'} sx={{fontFamily:bizFontFamily, fontSize:22, color:'white', fontWeight:700}}>{username}</Typography>
           </Box>
           <Box>
             { icon }

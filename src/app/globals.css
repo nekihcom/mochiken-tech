@@ -5,22 +5,6 @@
 
 
 /*========= 全体共通 ===============*/
-.max-w-90per {
-  max-width: 1024px;
-  width: 90%
-}
-
-.font-primary-color {
-  color: #009688 !important;
-}
-
-.profile-img {
-  border-radius: 200px;
-  box-shadow: 5px 5px 15px -5px #c4c4c4;
-  width:200px;
-  height: 200px;
-}
-
 
 /*========= スクロールダウン ===============*/
 /*スクロールダウン全体の場所*/

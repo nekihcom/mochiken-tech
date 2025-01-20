@@ -8,6 +8,7 @@ import { grey, teal } from '@mui/material/colors';
 
 import GlobalContainer from '@/components/organisms/layout/GlobalContainer';
 import { navItems } from '@/data/site';
+import { bizBoldClassName, bizFontFamily } from '@/data/fonts';
 
 const ContactButton = () => {
   return (
@@ -96,7 +97,7 @@ const HeaderMenu = (props: Props) => {
     <Box className='flex'>
       <CssBaseline />
       <HideOnScroll {...props}>
-        <AppBar component="nav" sx={{backgroundColor:'#fafafa'}}>
+        <AppBar component="nav" sx={{backgroundColor:'#fafafa', fontFamily:bizFontFamily}}>
           <GlobalContainer>
             <Toolbar>
               <Typography
@@ -106,7 +107,7 @@ const HeaderMenu = (props: Props) => {
                 sx={{ 
                   flexGrow: 1, 
               }}>
-                <Link href={'/'} className='font-bold tracking-tighter' >Mochiken.tech</Link>
+                <Link href={'/'} className={'font-bold '+bizBoldClassName}>Mochiken.tech</Link>
               </Typography>
             
               <Box sx={{ display: { xs: 'none', md: 'block' }, color:grey[900], fontWeight:700, }}>

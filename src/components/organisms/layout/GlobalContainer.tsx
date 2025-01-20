@@ -1,5 +1,6 @@
 import { FC, ReactNode } from "react";
 import { Container } from "@mui/material";
+import { bizFontFamily } from "@/data/fonts";
 
 type Props = {
   children: ReactNode;
