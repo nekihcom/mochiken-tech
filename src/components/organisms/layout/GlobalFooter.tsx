@@ -34,7 +34,7 @@ const GlobalFooter = () => {
 
         {/* Copyright */}
         <Typography className="text-center" sx={{fontFamily:bizFontFamily, fontSize:{xs:10, lg:14}}}>
-          &copy; Copyright {new Date().getFullYear()}. Made by <a href='/' className="underline font-bold">Masaya Kemmochi</a>
+          &copy; Copyright {new Date().getFullYear()}. Made by <Link href='/' className="underline font-bold">Masaya Kemmochi</Link>
         </Typography>
       </GlobalContainer>
       </Box>
