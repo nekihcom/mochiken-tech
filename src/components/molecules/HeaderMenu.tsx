@@ -7,8 +7,10 @@ import useScrollTrigger from '@mui/material/useScrollTrigger';
 import { grey, teal } from '@mui/material/colors';
 
 import GlobalContainer from '@/components/organisms/layout/GlobalContainer';
-import { navItems } from '@/data/site';
+import { globalBackgroundColor, navItems } from '@/data/site';
 import { bizBoldClassName, bizFontFamily } from '@/data/fonts';
+import ProgressBar from '../atoms/ProgressBar';
+import OpacityAnimation from '@/lib/animation/OpacityAnimation';
 
 const ContactButton = () => {
   return (
@@ -55,7 +57,7 @@ const HeaderMenu = (props: Props) => {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', backgroundColor:globalBackgroundColor }}>
       <List>
         {navItems.map((item) => (
           <ListItem key={item.path} disablePadding sx={{width:'90%', margin:'0 auto'}}>
@@ -94,64 +96,67 @@ const HeaderMenu = (props: Props) => {
   
   return (
     <>
-    <Box className='flex'>
-      <CssBaseline />
-      <HideOnScroll {...props}>
-        <AppBar component="nav" sx={{backgroundColor:'#fafafa', fontFamily:bizFontFamily}}>
-          <GlobalContainer>
-            <Toolbar>
-              <Typography
-                variant="h6"
-                component="h1"
-                className='text-zinc-800'
-                sx={{ 
-                  flexGrow: 1, 
-              }}>
-                <Link href={'/'} className={'font-bold '+bizBoldClassName}>Mochiken.tech</Link>
-              </Typography>
+      <Box className='flex'>
+        <CssBaseline />
+        <HideOnScroll {...props}>
+          <AppBar component="nav" sx={{backgroundColor:globalBackgroundColor, fontFamily:bizFontFamily}}>
+            <GlobalContainer>
+              <Toolbar>
+                <Typography
+                  variant="h6"
+                  component="h1"
+                  className='text-zinc-800'
+                  sx={{ 
+                    flexGrow: 1, 
+                }}>
+                  <OpacityAnimation>
+                    <Link href={'/'} className={'font-bold '+bizBoldClassName}>Mochiken.tech</Link>
+                  </OpacityAnimation>
+                </Typography>
             
-              <Box sx={{ display: { xs: 'none', md: 'block' }, color:grey[900], fontWeight:700, }}>
-                {navItems.map((item) => (
-                  <Link key={item.path} href={item.path} className='underline-animation mr-7 uppercase'>
-                    {item.title}
-                  </Link>
-                ))}
-                <ContactButton />
-              </Box>
+                <Box sx={{ display: { xs: 'none', md: 'block' }, color:grey[900], fontWeight:700, }}>
+                  {navItems.map((item) => (
+                    <Link key={item.path} href={item.path} className='underline-animation mr-7 uppercase'>
+                      {item.title}
+                    </Link>
+                  ))}
+                  <ContactButton />
+                </Box>
 
-              <IconButton
-                className='text-zinc-800'
-                aria-label="open drawer"
-                edge="start"
-                onClick={handleDrawerToggle}
-                sx={{ mr: 2, display: { md: 'none' } }}
-              >
-                <MenuIcon />
-              </IconButton>
-            </Toolbar>
-          </GlobalContainer>
-        </AppBar>
-      </HideOnScroll>
-      <nav>
-        <Drawer
-          container={container}
-          anchor='right'
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, 
-          }}
-          sx={{
-            display: { xs: 'block', md: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-        >
-          {drawer}
-        </Drawer>
-      </nav>
-    </Box>
-    <Toolbar />
+                <IconButton
+                  className='text-zinc-800'
+                  aria-label="open drawer"
+                  edge="start"
+                  onClick={handleDrawerToggle}
+                  sx={{ mr: 2, display: { md: 'none' } }}
+                >
+                  <MenuIcon />
+                </IconButton>
+              </Toolbar>
+            </GlobalContainer>
+          </AppBar>
+        </HideOnScroll>
+        <nav>
+          <Drawer
+            container={container}
+            anchor='right'
+            variant="temporary"
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            ModalProps={{
+              keepMounted: true, 
+            }}
+            sx={{
+              display: { xs: 'block', md: 'none' },
+              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor:globalBackgroundColor },
+            }}
+          >
+            {drawer}
+          </Drawer>
+        </nav>
+        <ProgressBar />
+      </Box>
+      <Toolbar />
     </>
   );
 }

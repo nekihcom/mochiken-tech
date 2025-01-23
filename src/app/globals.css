@@ -5,6 +5,17 @@
 
 
 /*========= 全体共通 ===============*/
+/*========= スクロールバー ===============*/
+.progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background-color: #009688;
+  transform-origin: 0%;
+  z-index: 999;
+}
 
 /*========= スクロールダウン ===============*/
 /*スクロールダウン全体の場所*/

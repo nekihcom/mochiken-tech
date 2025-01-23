@@ -18,8 +18,8 @@ const Works = () => {
     }}>
       <HomeSectionContainer title={'my resent works'} anchorLink={'works'}>
         <List sx={{display:'flex', flexDirection:'column', alignItems:'center'}}>
-          {cardData.map((card) => (
-            <WorkCard key={card.id} id={card.id} image={card.image} title={card.title} description={card.description} path={card.path} />
+          {cardData.map((card, index) => (
+            <WorkCard index={index} key={card.id} id={card.id} image={card.image} title={card.title} description={card.description} path={card.path} />
           ))}
         </List>
       </HomeSectionContainer>

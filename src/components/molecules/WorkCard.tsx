@@ -3,6 +3,7 @@ import { Grid2, ListItem, Typography } from "@mui/material";
 
 import PrimaryButton from "@/components/atoms/PrimaryButton";
 import { bizFontFamily } from "@/data/fonts";
+import RiseAnimation from "@/lib/animation/RiseAnimation";
 
 
 type Props = {
@@ -11,10 +12,12 @@ type Props = {
   title: string;
   description: string;
   path: string;
+  index?: number;
 }
 const WorkCard = (props:Props) => {
-  const { id, image, title, description, path } = props;
+  const { id, image, title, description, path, index } = props;
   return (
+    <RiseAnimation delay={index}>
     <ListItem key={id} sx={{width:{md:900}, py: 8, px: 4}}>
       <Grid2
         container
@@ -35,6 +38,7 @@ const WorkCard = (props:Props) => {
         </Grid2>
       </Grid2>
     </ListItem>
+    </RiseAnimation>
   );
 };
 
