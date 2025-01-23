@@ -1,8 +1,7 @@
 import { Box, Container, Typography } from "@mui/material";
 
 import HomeSectionContainer from "@/components/organisms/layout/HomeSectionContainer";
-import { bizFontFamily, oswaldFontFamily } from "@/data/fonts";
-import { motion } from "framer-motion";
+import { bizFontFamily } from "@/data/fonts";
 import RiseAnimation from "@/lib/animation/RiseAnimation";
 
 

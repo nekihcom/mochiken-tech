@@ -19,7 +19,7 @@ const HomeSectionContainer = (props:Props) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  let topContainerStyle = {
+  const topContainerStyle = {
     pt:20,
     pb:30,
     backgroundColor: ''
