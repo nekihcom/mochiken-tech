@@ -1,4 +1,4 @@
-import { Grid2 } from "@mui/material";
+import { Box, Grid2 } from "@mui/material";
 
 import HomeSectionContainer from "@/components/organisms/layout/HomeSectionContainer";
 import ArticleCard from "@/components/molecules/ArticleCard";
@@ -15,17 +15,23 @@ const cardData = [
 const Articles = () => {
   return (
     <>
+      <Box sx={{
+        background: 'linear-gradient(to right, rgba(245, 245, 245, 0.8), rgba(245, 245, 245, 0.8)), url(/keyvisual-bg.svg)',
+        backgroundAttachment: 'fixed'
+      }}>
       <HomeSectionContainer title={'Articles'} anchorLink={'articles'}>
         <Grid2
           container 
           spacing={2}
           wrap="wrap"
+          sx={{py: 8, px: 4}}
         >
-          {cardData.map((card) => (
-            <ArticleCard key={card.title} image={card.image} path={card.path} title={card.title} source={card.source} date={card.date} />
+          {cardData.map((card, index) => (
+            <ArticleCard index={index} key={card.title} image={card.image} path={card.path} title={card.title} source={card.source} date={card.date} />
           ))}
         </Grid2>
       </HomeSectionContainer>
+      </Box>
     </>
   );
 }

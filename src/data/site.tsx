@@ -6,19 +6,10 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 import { Certificate, Experience, NavItem, SnsLinkCard } from "@/type/type"
 
+
+export const globalBackgroundColor:string = grey[200];
+
 export const navItems: Array<NavItem> = [
-  // {
-  //   title:'Home',
-  //   path:'/'
-  // },
-  // {
-  //   title:'Fetch Example',
-  //   path:'/fetch-example'
-  // },
-  // {
-  //   title:'Fetch Example2',
-  //   path:'/fetch-example2'
-  // },
   {
     title:'Profile',
     path:'#profile'
