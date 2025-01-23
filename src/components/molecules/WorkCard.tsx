@@ -3,6 +3,7 @@ import { Grid2, ListItem, Typography } from "@mui/material";
 
 import PrimaryButton from "@/components/atoms/PrimaryButton";
 import { bizFontFamily } from "@/data/fonts";
+import { apiHost } from "@/data/site";
 import RiseAnimation from "@/lib/animation/RiseAnimation";
 
 
@@ -27,7 +28,7 @@ const WorkCard = (props:Props) => {
       >
         {/* 左カラム (画像) */}
         <Grid2 size={{xs:12, md:6}}>
-          <Image src={image} alt={title} width={800} height={600} className="rounded-md" />
+          <Image src={apiHost + image} alt={title} width={800} height={600} className="rounded-md" />
         </Grid2>
 
         {/* 右カラム (テキスト + ボタン) */}

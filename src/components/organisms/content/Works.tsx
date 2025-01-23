@@ -1,15 +1,15 @@
+import { Suspense } from "react";
 import { Box, List } from "@mui/material";
 
 import HomeSectionContainer from "@/components/organisms/layout/HomeSectionContainer";
 import WorkCard from "@/components/molecules/WorkCard";
+import { getAllWorksData } from "@/lib/works";
+import { Work } from "@/type/type";
 
 
-// 例として表示するカードデータを配列で用意
-const cardData = [
-  { id: 1, title: "Mochiken.tech", image:'/works/mochiken-tech.png', description: "エンジニアもちけんのポートフォリオサイト（HP）", path:'/' },
-];
-
-const Works = () => {
+async function Works() {
+  const works:Array<Work> = await getAllWorksData();
+  console.log(works);
   return (
     <>
     <Box sx={{
@@ -17,11 +17,13 @@ const Works = () => {
       backgroundAttachment: 'fixed'
     }}>
       <HomeSectionContainer title={'my resent works'} anchorLink={'works'}>
+        <Suspense fallback={<h1>Loading...</h1>}>
         <List sx={{display:'flex', flexDirection:'column', alignItems:'center'}}>
-          {cardData.map((card, index) => (
-            <WorkCard index={index} key={card.id} id={card.id} image={card.image} title={card.title} description={card.description} path={card.path} />
+          {works && works.map((work, index) => (
+            <WorkCard index={index} key={work.id} id={work.id} image={work.image} title={work.title} description={work.description} path={work.url} />
           ))}
         </List>
+        </Suspense>
       </HomeSectionContainer>
     </Box>
     </>

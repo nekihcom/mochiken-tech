@@ -49,7 +49,6 @@ export const SnsLinks: Array<SnsLinkCard> = [
   }
 ];
 
-
 export const workExperience: Array<Experience> = [
   {
     term: <>2022/04<br className="md:hidden"/>〜現在</>,
@@ -66,7 +65,6 @@ export const workExperience: Array<Experience> = [
     description: <>成蹊大学理工学部情報科学科　卒業</>
   }
 ]
-
 
 export const certificates: Array<Certificate> = [
   {
@@ -87,7 +85,6 @@ export const certificates: Array<Certificate> = [
   },
 ]
 
-
 export const frontendSkillsList: Array<string> = [
   'HTML', 'CSS', 'Sass', 'Bootstrap', 'TailwindCSS', 'Javascript', 'jQuery', 'React', 'Next.js', 'Typescript', 
   'Wordpress', 'Drupal', 'Figma', 
@@ -101,3 +98,5 @@ export const backendSkillsList: Array<string> = [
 export const devopsSkillsList: Array<string> = [
   'Git', 'GitHub', 'Vercel', 'Netlify', 'Firebase', 'Cloudflare'
 ]
+
+export const apiHost:string = 'http://35.77.104.45';

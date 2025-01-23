@@ -31,3 +31,12 @@ export type Certificate = {
   date: string;
   certificateName: string;
 }
+
+
+export type Work = {
+  id: number;
+  title: string;
+  image: string;
+  description: string;
+  url: string;
+}
