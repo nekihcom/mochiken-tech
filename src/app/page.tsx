@@ -1,6 +1,3 @@
-import Container from "@/app/components/container";
-import { HeroBlog } from "@/app/components/hero-blog";
-import { Intro } from "@/app/components/intro";
 import { MoreStories } from "@/app/components/more-stories";
 import { getAllBlogs } from "@/lib/api";
 
