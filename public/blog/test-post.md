@@ -1,13 +1,13 @@
 ---
 title: "test blog"
 excerpt: "こんにちはテスト投稿です"
-coverImage: "https://placehold.jp/800x600.png"
+coverImage: "/blog/test-post/cover.jpg"
 date: "2025-01-25T00:00:00.0000"
 author:
   name: Mochiken
-  picture: "/assets/blog/authors/jj.jpeg"
+  picture: "/blog/test-post/joe.jpeg"
 ogImage:
-  url: "https://placehold.jp/800x600.png"
+  url: "/blog/test-post/cover.jpg"
 ---
 
 こんにちはこれはテスト投稿ですこんにちはこれはテスト投稿ですこんにちはこれはテスト投稿ですこんにちはこれはテスト投稿です

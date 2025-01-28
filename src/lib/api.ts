@@ -3,7 +3,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
 
-const blogsDirectory = join(process.cwd(), "/public/blogs");
+const blogsDirectory = join(process.cwd(), "/public/blog");
 
 export function getBlogSlugs() {
   return fs.readdirSync(blogsDirectory);
@@ -19,7 +19,7 @@ export function getBlogBySlug(slug: string) {
 }
 
 export function getAllBlogs(): Blog[] {
-  const slugs = getBlogSlugs();
+  const slugs = getBlogSlugs().filter(slug => slug.match(/.md/));
   const blogs = slugs
     .map((slug) => getBlogBySlug(slug))
     // sort blogs by date in descending order
