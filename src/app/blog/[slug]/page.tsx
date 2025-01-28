@@ -1,14 +1,11 @@
+import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { getAllBlogs, getBlogBySlug } from "@/lib/api";
 import { CMS_NAME } from "@/lib/constants";
 import markdownToHtml from "@/lib/markdownToHtml";
-import Alert from "@/app/components/alert";
-import Container from "@/app/components/container";
-import Header from "@/app/components/header";
-import { BlogBody } from "@/app/components/blog-body";
-import { BlogHeader } from "@/app/components/blog-header";
 
 export default async function Blog(props: Params) {
   const params = await props.params;
@@ -22,19 +19,19 @@ export default async function Blog(props: Params) {
 
   return (
     <main>
-      <Alert preview={blog.preview} />
-      <Container>
-        <Header />
-        <article className="mb-32">
-          <BlogHeader
-            title={blog.title}
-            coverImage={blog.coverImage}
-            date={blog.date}
-            author={blog.author}
-          />
-          <BlogBody content={content} />
-        </article>
-      </Container>
+      <h2>
+        <Link href="/">Blog</Link>
+      </h2>
+      <article>
+        <p>{blog.title}</p>
+        <Image src={blog.coverImage} alt={blog.title} width={100} height={100} />
+        <time>{blog.date}</time>
+        <p>{blog.author.name}</p>
+        <Image src={blog.author.picture} alt={blog.author.name} width={100} height={100} />
+        <div
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
+      </article>
     </main>
   );
 }
