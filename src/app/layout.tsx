@@ -50,8 +50,8 @@ export default function RootLayout({
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
       <body>
+        <header>New Mochiken Tech</header>
         <div>{children}</div>
-        {/* <Footer /> */}
       </body>
     </html>
   );
