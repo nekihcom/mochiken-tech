@@ -4,7 +4,6 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { getAllBlogs, getBlogBySlug } from "@/lib/api";
-import { CMS_NAME } from "@/lib/constants";
 import markdownToHtml from "@/lib/markdownToHtml";
 
 export default async function Blog(props: Params) {
@@ -18,16 +17,10 @@ export default async function Blog(props: Params) {
   const content = await markdownToHtml(blog.content || "");
 
   return (
-    <main>
-      <h2>
-        <Link href="/">Blog</Link>
-      </h2>
+    <main className="py-10 px-5">
       <article>
-        <p>{blog.title}</p>
-        <Image src={blog.coverImage} alt={blog.title} width={100} height={100} />
-        <time>{blog.date}</time>
-        <p>{blog.author.name}</p>
-        <Image src={blog.author.picture} alt={blog.author.name} width={100} height={100} />
+        <h2>{blog.title}</h2>
+        <Image src={blog.coverImage} alt={blog.title} width={600} height={400} />
         <div
           dangerouslySetInnerHTML={{ __html: content }}
         />
@@ -50,7 +43,7 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
     return notFound();
   }
 
-  const title = `${blog.title} | Next.js Blog Example with ${CMS_NAME}`;
+  const title = `${blog.title} | Mochiken`;
 
   return {
     title,

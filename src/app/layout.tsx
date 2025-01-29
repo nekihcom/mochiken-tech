@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
-import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
+import { HOME_OG_IMAGE_URL } from "@/lib/constants";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: `Next.js Blog Example with ${CMS_NAME}`,
+  title: `Mochiken`,
   description: `エンジニアもちけんのポートフォリオサイトです。`,
+  metadataBase: new URL('http://localhost:3000'),
   openGraph: {
     images: [HOME_OG_IMAGE_URL],
   },
@@ -50,8 +54,9 @@ export default function RootLayout({
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
       <body>
-        <header>New Mochiken Tech</header>
-        <div>{children}</div>
+        <Header />
+        {children}
+        <Footer />
       </body>
     </html>
   );
