@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+
+import { Provider } from "@/components/ui/provider";
+
 import { HOME_OG_IMAGE_URL } from "@/lib/constants";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import "./globals.css";
+// import "./globals.css";
 
 export const metadata: Metadata = {
   title: `Mochiken`,
@@ -19,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
+    <html lang="ja" suppressHydrationWarning>
       <head>
         <link
           rel="apple-touch-icon"
@@ -54,9 +57,11 @@ export default function RootLayout({
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <Provider>
+          <Header />
+          {children}
+          <Footer />
+        </Provider>
       </body>
     </html>
   );
