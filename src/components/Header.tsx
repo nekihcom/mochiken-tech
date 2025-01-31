@@ -1,21 +1,18 @@
-import Link from "next/link";
+import { Box, Flex } from "@chakra-ui/react";
+
+import PrimaryContainer from "./PrimaryContainer";
 
 const Header = () => {
   return (
     <>
-      <div className="flex py-10 px-5">
-        <h1>Mochiken.</h1>
-        <nav>
-          <ul className="flex">
-            <li className="ml-5">
-              <Link href="/" className="underline">Top</Link>
-            </li>
-            <li className="ml-5">
-              <Link href="/blog" className="underline">Blog</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <Box as={'header'} css={{backgroundColor:"transparent", position:"sticky", top:0}}>
+        <PrimaryContainer>
+          <Flex justify={'space-between'} css={{py:5}}>
+            <Box>Mochiken</Box>
+            <Box>Box B</Box>
+          </Flex>
+        </PrimaryContainer>
+      </Box>
     </>
   );
 }

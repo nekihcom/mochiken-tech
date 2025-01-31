@@ -5,6 +5,7 @@ import { Provider } from "@/components/ui/provider";
 import { HOME_OG_IMAGE_URL } from "@/lib/constants";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Box, Center } from "@chakra-ui/react";
 // import "./globals.css";
 
 export const metadata: Metadata = {
@@ -58,9 +59,13 @@ export default function RootLayout({
       </head>
       <body>
         <Provider>
-          <Header />
-          {children}
-          <Footer />
+          <Box css={{background:"gray.950", p:1}}>
+            <Box css={{background:"gray.100", borderRadius:5}}>
+              <Header />
+              {children}
+              <Footer />              
+            </Box>
+          </Box>
         </Provider>
       </body>
     </html>
