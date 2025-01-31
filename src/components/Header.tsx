@@ -1,21 +1,17 @@
-import { Box, Flex, Heading, Icon } from "@chakra-ui/react";
+import { Box, Flex, Heading } from '@chakra-ui/react';
 
-import PrimaryContainer from "./PrimaryContainer";
-import { FcMenu } from "react-icons/fc";
-import HeaderDrawer from "./HeaderDrawer";
+import PrimaryContainer from './PrimaryContainer';
+import Menu from './Menu';
 
 const Header = () => {
   return (
     <>
-      <Box as={'header'} css={{backgroundColor:"transparent", position:"sticky", top:0}}>
+      <Box as={'header'} css={{backgroundColor:'transparent', position:'sticky', top:0}}>
         <PrimaryContainer>
           <Flex justify={'space-between'} css={{py:3}}>
             <Flex align={'center'} ><Heading>Mochiken</Heading></Flex>
             <Box>
-              {/* <Icon fontSize="40px" color="tomato">
-                <FcMenu />
-              </Icon> */}
-              <HeaderDrawer />
+              <Menu />
             </Box>
           </Flex>
         </PrimaryContainer>
