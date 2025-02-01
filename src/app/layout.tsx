@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 
-import { Provider } from '@/components/ui/provider';
+import { Box } from '@chakra-ui/react';
 
+import '../styles/globals.css';
 import { HOME_OG_IMAGE_URL } from '@/lib/constants';
+import { Provider } from '@/components/ui/provider';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Box, Center } from '@chakra-ui/react';
-// import './globals.css';
 
 export const metadata: Metadata = {
   title: `Mochiken`,

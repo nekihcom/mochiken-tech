@@ -1,18 +1,23 @@
-import { Button } from '@chakra-ui/react'
+'use client';
+import Link from 'next/link';
+
+import { Box, Button } from '@chakra-ui/react';
 import {
   MenuContent,
   MenuItem,
   MenuRoot,
   MenuTrigger,
-} from '@/components/ui/menu'
-import Link from 'next/link';
+} from '@/components/ui/menu';
+
 
 const Menu = () => {
   return (
     <MenuRoot>
       <MenuTrigger asChild>
-        <Button variant='outline' size='sm' css={{border:'none'}}>
-          Open
+        <Button variant='outline' size='sm' css={{border:'none'}} className='hamburgerBtn'>
+          <Box as={'span'}></Box>
+          <Box as={'span'}></Box>
+          <Box as={'span'}></Box>
         </Button>
       </MenuTrigger>
       <MenuContent>
