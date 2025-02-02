@@ -1,6 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
-import { parseISO, format } from "date-fns";
+// import { parseISO, format } from "date-fns";
 import { getAllBlogs } from "@/lib/api";
 
 const Blog = () => {
@@ -15,7 +14,10 @@ const Blog = () => {
           {moreBlogs.map((blog, index) => (
             <li key={index} className="flex">
               <div>
-                <time dateTime={blog.date}>{format(parseISO(blog.date), "yyyy/MM/dd")}</time>
+                <time dateTime={blog.date}>{
+                  // format(parseISO(blog.date), "yyyy/MM/dd")
+                  blog.date
+                }</time>
               </div>
               <div className="ml-5">
                 <Link href={`/blog/${blog.slug}`} className="underline">{blog.title}</Link>

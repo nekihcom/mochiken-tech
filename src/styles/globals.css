@@ -42,3 +42,15 @@
 	top:26px;
   width: 25%;
 }
+
+
+/* =================================== 
+ブログ
+=================================== */
+#BlogBody * {
+  margin-bottom: 1rem;
+}
+
+#BlogFooter a {
+  text-decoration: underline;
+}

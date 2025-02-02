@@ -1,4 +1,4 @@
-import { Blog } from "@/interfaces/blog";
+import { Blog } from "@/type/type";
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
