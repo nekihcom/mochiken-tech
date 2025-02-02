@@ -8,8 +8,8 @@ import { Box } from "@chakra-ui/react";
 import HomeBlog from "@/components/HomeBlog";
 import HomeProfile from "@/components/HomeProfile";
 
-const Home = () => {
 
+const Home = () => {
   return (
     <>
       <Box as={'main'} css={{py:10, px:5}}>

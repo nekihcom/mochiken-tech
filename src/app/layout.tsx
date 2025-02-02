@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 
-import { Box } from '@chakra-ui/react';
+// import { Box } from '@chakra-ui/react';
 
 import '../styles/globals.css';
 import { HOME_OG_IMAGE_URL } from '@/lib/constants';
 import { Provider } from '@/components/ui/provider';
-// import Header from '@/components/Header';
-// import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: `Mochiken`,
@@ -59,14 +59,13 @@ export default function RootLayout({
       </head>
       <body>
         <Provider>
-          {/* <Box css={{background:'gray.950', p:{base:1, md:4}}}>
-            <Box css={{background:'gray.100', borderRadius:5}}>
+          {/* <Box css={{background:'gray.950', p:{base:1, md:4}}}> */}
+            {/* <Box css={{background:'gray.100', borderRadius:5}}> */}
               <Header />
               {children}
               <Footer />              
-            </Box>
-          </Box> */}
-          <Box>aaaa</Box>
+            {/* </Box> */}
+          {/* </Box> */}
         </Provider>
       </body>
     </html>
