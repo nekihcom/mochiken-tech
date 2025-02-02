@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-// import { Box } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 
 import '../styles/globals.css';
 import { HOME_OG_IMAGE_URL } from '@/lib/constants';
@@ -59,13 +59,13 @@ export default function RootLayout({
       </head>
       <body>
         <Provider>
-          {/* <Box css={{background:'gray.950', p:{base:1, md:4}}}> */}
-            {/* <Box css={{background:'gray.100', borderRadius:5}}> */}
+          <Box css={{background:'gray.950', p:{base:1, md:4}}}>
+            <Box css={{background:'gray.100', borderRadius:5}}>
               <Header />
               {children}
               <Footer />              
-            {/* </Box> */}
-          {/* </Box> */}
+            </Box>
+          </Box>
         </Provider>
       </body>
     </html>
