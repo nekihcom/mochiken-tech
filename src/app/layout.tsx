@@ -59,7 +59,7 @@ export default function RootLayout({
       </head>
       <body>
         <Provider>
-          <Box css={{background:'gray.950', p:1}}>
+          <Box css={{background:'gray.950', p:{base:1, md:4}}}>
             <Box css={{background:'gray.100', borderRadius:5}}>
               <Header />
               {children}

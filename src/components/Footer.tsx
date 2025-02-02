@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <>
       <Box as={'footer'} css={{py:3, px:5}}>
-        <Box css={{margin:'10px auto', maxW:'50%'}}>
+        <Box css={{margin:'10px auto', maxW:'350px'}}>
           <SnsIconLinkList />
         </Box>
         <Box css={{textAlign:'center'}}>

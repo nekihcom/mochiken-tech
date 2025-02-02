@@ -1,4 +1,4 @@
-import { List } from "@chakra-ui/react";
+import { Grid, GridItem, Center } from "@chakra-ui/react";
 
 import { Blog } from "@/type/type";
 import BlogCard from "./BlogCard";
@@ -12,13 +12,15 @@ const BlogList = (props: Props) => {
 
   return (
     <>
-      <List.Root>
+    <Center>
+      <Grid maxW={'960px'} >
         {allBlogs && allBlogs.map((blog, index) => (
-          <List.Item key={index}>
+          <GridItem key={index} colSpan={1}>
             <BlogCard blog={blog} />
-          </List.Item>
+          </GridItem>
         ))}
-      </List.Root>
+      </Grid>
+      </Center>
     </>
   );
 }
