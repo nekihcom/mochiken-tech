@@ -5,42 +5,12 @@
 
 
 /* =================================== 
-ハンバーガーメニュー
+共通
 =================================== */
-.hamburgerBtn {
-	position: relative;
-	/* background:#DBB82E; */
-	cursor: pointer;
-  /* width: 50px; */
-  /* height:50px; */
-	border-radius: 5px;
-}
-
-/*ボタン内側*/
-.hamburgerBtn span {
-  display: inline-block;
-  transition: all .4s;/*アニメーションの設定*/
-  position: absolute;
-  left: 4px;
-  height: 2px;
-  border-radius: 2px;
-	background: #111111;
-}
-
-
-.hamburgerBtn span:nth-of-type(1) {
-	top:10px;	
-  width: 75%;
-}
-
-.hamburgerBtn span:nth-of-type(2) {
-	top:18px;
-  width: 50%;
-}
-
-.hamburgerBtn span:nth-of-type(3) {
-	top:26px;
-  width: 25%;
+@media (min-width: 960px) {
+  .is-sp {
+    display: none;
+  }
 }
 
 

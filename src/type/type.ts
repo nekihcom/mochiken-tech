@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export type Author = {
   name: string;
   picture: string;
@@ -16,3 +18,12 @@ export type Blog = {
   content: string;
   preview?: boolean;
 };
+
+
+export type Sns = {
+  title: string,
+  link: string,
+  color: string,
+  username: string,
+  icon: ReactNode
+}
