@@ -1,8 +1,7 @@
 
-import { Box, Flex, Grid, GridItem, Heading, Text, Image, Container, Separator } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, Image, Separator } from "@chakra-ui/react";
 
 import HomeSectionContainer from "./HomeSectionContainer";
-import SnsLinkList from "./SnsLinkList";
 import SnsIconLinkList from "./SnsIconLinkList";
 
 const HomeProfile = () => {
