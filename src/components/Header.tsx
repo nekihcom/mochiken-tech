@@ -7,15 +7,16 @@ import Link from 'next/link';
 const Header = () => {
   return (
     <>
-      <Box as={'header'} css={{backgroundColor:'transparent', position:'sticky', top:0}}>
+      <Box as={'header'} css={{backgroundColor:'transparent', position:'sticky', top:0, zIndex:9999}}>
         <PrimaryContainer>
           <Flex justify={'space-between'} css={{py:3}}>
             <Flex align={'center'} >
               <Link href={'/'}>
                 <Heading as={'h1'} css={{
-                  fontWeight: 700,
-                  fontSize: '1.5rem'
-                }}>Mochiken</Heading>
+                  fontWeight:700,
+                  fontSize:'1.5rem',
+                  textTransform:'uppercase'
+                }}>Mochiken.</Heading>
               </Link>
             </Flex>
             <Box>

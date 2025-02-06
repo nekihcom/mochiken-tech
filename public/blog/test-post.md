@@ -1,7 +1,7 @@
 ---
 title: "ポートフォリオサイト開設"
 excerpt: "こんにちはテスト投稿です"
-coverImage: "/blog/test-post/cover.jpg"
+coverImage: "/noimage.png"
 date: "2025/01/25"
 author:
   name: Mochiken

@@ -14,7 +14,7 @@ const HomeBlog = () => {
         <BlogList allBlogs={allBlogs} />
         { allBlogs.length > 3 && 
           <Box>
-            <Link href={'/blog'}>すべてのの記事を見てみる</Link>
+            <Link href={'/blog'}>すべての記事を見てみる</Link>
           </Box>
         }
       </HomeSectionContainer>

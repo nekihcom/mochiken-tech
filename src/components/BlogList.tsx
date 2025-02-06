@@ -12,14 +12,14 @@ const BlogList = (props: Props) => {
 
   return (
     <>
-    <Center>
-      <Grid maxW={'960px'} >
-        {allBlogs && allBlogs.map((blog, index) => (
-          <GridItem key={index} colSpan={1}>
-            <BlogCard blog={blog} />
-          </GridItem>
-        ))}
-      </Grid>
+      <Center mt={{base:10, md:20}}>
+        <Grid maxW={'960px'} >
+          {allBlogs && allBlogs.map((blog, index) => (
+            <GridItem key={index} colSpan={1}>
+              <BlogCard blog={blog} />
+            </GridItem>
+          ))}
+        </Grid>
       </Center>
     </>
   );

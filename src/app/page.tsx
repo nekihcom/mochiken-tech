@@ -7,14 +7,18 @@ import { Box } from "@chakra-ui/react";
 
 import HomeBlog from "@/components/HomeBlog";
 import HomeProfile from "@/components/HomeProfile";
+import HomeWork from "@/components/HomeWork";
+import HomeFirstVisual from "@/components/HomeFirstVisual";
 
 
 const Home = () => {
   return (
     <>
-      <Box as={'main'} css={{py:10, px:5}}>
+      <HomeFirstVisual />
+      <Box as={'main'} py={80} px={0}>
         <HomeProfile />
         <HomeBlog />
+        <HomeWork />
       </Box>
     </>
   );

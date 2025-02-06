@@ -1,9 +1,8 @@
-import Image from "next/image";
+import Link from "next/link";
 
-import { Card } from "@chakra-ui/react";
+import { Box, Card, Heading, Image, Text } from "@chakra-ui/react";
 
 import { Blog } from "@/type/type";
-import Link from "next/link";
 
 type Props = {
   blog: Blog;
@@ -12,25 +11,23 @@ const BlogCard = (props: Props) => {
   const { blog } = props;
   return (
     <>
-      <Card.Root maxW="sm" overflow="hidden" css={{boxShadow:'0px 5px 20px -5px #777777'}}>
+      <Box _hover={{opacity:0.5, transition:'all 0.3s'}}>
         <Link href={`/blog/${blog.slug}`}>
-          <Image
-            src={blog.coverImage}
-            alt={blog.title}
-            width={382}
-            height={100}
-          />
-          <Card.Body gap="2">
-            <Card.Title css={{
-              fontWeight:700,
-              fontSize: '1.25rem'
-            }}>{blog.title}</Card.Title>
-            <Card.Description>{blog.date}</Card.Description>
-          </Card.Body>
-          {/* <Card.Footer gap="2">
-          </Card.Footer> */}
+          <Card.Root 
+            maxW="sm" 
+            overflow="hidden" 
+          >
+            <Image
+              src={blog.coverImage}
+              alt={blog.title}
+            />
+          </Card.Root>
+          <Box py={5}>
+            <Heading as={'h4'} fontWeight={700} fontSize={'1.25rem'}>{blog.title}</Heading>
+            <Text>{blog.date}</Text>
+          </Box>
         </Link>
-      </Card.Root>
+      </Box>
     </>
   );
 }

@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import SectionTitle from "./SectionTitle";
 import { ReactNode } from "react";
+import PrimaryContainer from "./PrimaryContainer";
 
 type Props = {
   title?: string;
@@ -11,9 +12,11 @@ const HomeSectionContainer = (props: Props) => {
 
   return (
     <>
-      <Box as={'section'} css={{my:10, py:5}}>
-        { title && <SectionTitle title={title} />}
-        { children }
+      <Box as={'section'} mb={96}>
+        <PrimaryContainer>
+          { title && <SectionTitle title={title} />}
+          { children }
+        </PrimaryContainer>
       </Box>
     </>
   )

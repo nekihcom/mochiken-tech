@@ -9,7 +9,7 @@ export type Blog = {
   slug: string;
   title: string;
   date: string;
-  coverImage: string;
+  coverImage?: string;
   author: Author;
   excerpt: string;
   ogImage: {
@@ -21,9 +21,17 @@ export type Blog = {
 
 
 export type Sns = {
-  title: string,
-  link: string,
-  color: string,
-  username: string,
-  icon: ReactNode
+  title: string;
+  link: string;
+  color: string;
+  username: string;
+  icon: ReactNode;
+};
+
+
+export type Work = {
+  title: string;
+  link: string;
+  thumbnail?: string;
+  excerpt: string;
 }
