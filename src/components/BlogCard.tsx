@@ -12,19 +12,19 @@ const BlogCard = (props: Props) => {
   return (
     <>
       <Box _hover={{opacity:0.5, transition:'all 0.3s'}}>
-        <Link href={`/blog/${blog.slug}`}>
+        <Link href={`/blog/${blog.id}`}>
           <Card.Root 
             maxW="sm" 
             overflow="hidden" 
           >
             <Image
-              src={blog.coverImage}
+              src={blog.thumbnail.url}
               alt={blog.title}
             />
           </Card.Root>
           <Box py={5}>
             <Heading as={'h4'} fontWeight={700} fontSize={'1.25rem'}>{blog.title}</Heading>
-            <Text>{blog.date}</Text>
+            <Text>{blog.createdAt}</Text>
           </Box>
         </Link>
       </Box>

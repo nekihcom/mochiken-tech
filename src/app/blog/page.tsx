@@ -1,33 +1,24 @@
 import Link from "next/link";
-// import { parseISO, format } from "date-fns";
-import { getAllBlogs } from "@/lib/api";
+import { getBlogs } from "@/lib/client";
 
-const Blog = () => {
-  const allBlogs = getAllBlogs();
-
-  const moreBlogs = allBlogs.slice(0);
-
+export default async function StaticPage() {
+  const { contents }  = await getBlogs();
+  
+  if (!contents) {
+    return <h1>No Contents</h1>;
+  }
+  
   return (
-    <main className="py-10 px-5">
-      {moreBlogs.length > 0 && 
+    <>
+      <div>
         <ul>
-          {moreBlogs.map((blog, index) => (
-            <li key={index} className="flex">
-              <div>
-                <time dateTime={blog.date}>{
-                  // format(parseISO(blog.date), "yyyy/MM/dd")
-                  blog.date
-                }</time>
-              </div>
-              <div className="ml-5">
-                <Link href={`/blog/${blog.slug}`} className="underline">{blog.title}</Link>
-              </div>
+          {contents.map((blog) => (
+            <li key={blog.id}>
+              <Link href={`/test/${blog.id}`}>{blog.title}</Link>
             </li>
           ))}
         </ul>
-      }
-    </main>
+      </div>
+    </>
   );
 }
-
-export default Blog;

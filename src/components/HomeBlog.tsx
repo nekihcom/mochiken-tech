@@ -1,18 +1,18 @@
-import { getAllBlogs } from "@/lib/api";
 import BlogList from "./BlogList";
 import HomeSectionContainer from "./HomeSectionContainer";
 import { Box } from "@chakra-ui/react";
+import { getBlogs } from "@/lib/client";
 import Link from "next/link";
 
-const HomeBlog = () => {
-  const allBlogs = getAllBlogs();
-  // const moreBlogs = allBlogs.slice(0);
+export default async function HomeBlog () {
+  const { contents }  = await getBlogs();
 
   return (
     <>
       <HomeSectionContainer title={'Blog'}>
-        <BlogList allBlogs={allBlogs} />
-        { allBlogs.length > 3 && 
+        {/* @ts-ignore */}
+        <BlogList allBlogs={contents} />
+        { contents.length > 3 && 
           <Box>
             <Link href={'/blog'}>すべての記事を見てみる</Link>
           </Box>
@@ -21,4 +21,3 @@ const HomeBlog = () => {
     </>
   );
 }
-export default HomeBlog;

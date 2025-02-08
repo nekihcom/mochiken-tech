@@ -32,7 +32,7 @@ const HomeFirstVisual = () => {
                 <Box as={'span'} color={'teal.600'}>Mochiken</Box><br />Portfolio.
               </Heading>
             </Box>
-            <Image src={'/profile/me.png'} width={{base:'75%', md:'40%'}} />
+            <Image src={'/profile/me.png'} alt={'Mochiken Avatar'} width={{base:'75%', md:'40%'}} />
           </Flex>
         </Box>
         <ScrollDoown />

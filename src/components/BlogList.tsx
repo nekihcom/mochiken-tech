@@ -2,12 +2,9 @@ import { Grid, GridItem, Center } from "@chakra-ui/react";
 
 import { Blog } from "@/type/type";
 import BlogCard from "./BlogCard";
+import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
 
-type Props = {
-  allBlogs: Array<Blog>;
-}
-
-const BlogList = (props: Props) => {
+const BlogList = (props: { allBlogs: (Blog & MicroCMSContentId & MicroCMSDate)[]; }) => {
   const { allBlogs } = props;
 
   return (

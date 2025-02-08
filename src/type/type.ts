@@ -6,18 +6,21 @@ export type Author = {
 };
 
 export type Blog = {
-  slug: string;
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt?: string | undefined;
+  revisedAt?: string | undefined;
   title: string;
-  date: string;
-  coverImage?: string;
-  author: Author;
-  excerpt: string;
-  ogImage: {
+  body: string;
+  thumbnail: {
     url: string;
-  };
-  content: string;
-  preview?: boolean;
-};
+    height: number;
+    width: number;
+  },
+  createDt?: Date;
+}
+
 
 
 export type Sns = {
