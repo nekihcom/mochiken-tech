@@ -1,8 +1,3 @@
-// import Link from "next/link";
-// import Image from "next/image";
-// import { parseISO, format } from "date-fns";
-// import { getAllBlogs } from "@/lib/api";
-
 import { Box } from "@chakra-ui/react";
 
 import HomeBlog from "@/components/HomeBlog";
@@ -15,7 +10,7 @@ const Home = () => {
   return (
     <>
       <HomeFirstVisual />
-      <Box as={'main'} py={80} px={0}>
+      <Box as={'main'} pt={80} px={0}>
         <HomeProfile />
         <HomeBlog />
         <HomeWork />
@@ -25,3 +20,4 @@ const Home = () => {
 }
 
 export default Home;
+export const runtime = 'edge';

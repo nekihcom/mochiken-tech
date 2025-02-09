@@ -22,3 +22,5 @@ export default async function StaticPage() {
     </>
   );
 }
+
+export const runtime = 'edge';

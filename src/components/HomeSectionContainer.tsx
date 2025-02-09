@@ -12,7 +12,7 @@ const HomeSectionContainer = (props: Props) => {
 
   return (
     <>
-      <Box as={'section'} mb={96}>
+      <Box as={'section'} mb={80}>
         <PrimaryContainer>
           { title && <SectionTitle title={title} />}
           { children }

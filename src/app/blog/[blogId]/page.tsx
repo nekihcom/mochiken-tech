@@ -58,3 +58,5 @@ export default async function StaticDetailPage({
     </>
   )
 }
+
+export const runtime = 'edge';
