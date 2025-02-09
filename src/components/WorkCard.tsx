@@ -14,9 +14,8 @@ const WorkCard = (props: Props) => {
       <Card.Root maxW="sm" overflow="hidden" css={{boxShadow:'0px 5px 20px -5px #777777', position:'relative'}}>
         <Link href={work.link}>
           <Image
-            src={work.thumbnail}
+            src={work.thumbnail && work.thumbnail.url}
             alt={work.title}
-            // height={220}
           />
           <Flex _hover={{opacity:'1', transition:'all 0.3s'}} 
             opacity={0} 

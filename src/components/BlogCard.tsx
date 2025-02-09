@@ -24,7 +24,7 @@ const BlogCard = (props: Props) => {
           </Card.Root>
           <Box py={5}>
             <Heading as={'h4'} fontWeight={700} fontSize={'1.25rem'}>{blog.title}</Heading>
-            <Text>{blog.createdAt}</Text>
+            <Text>{blog.createdAt.split('T')[0]}</Text>
           </Box>
         </Link>
       </Box>

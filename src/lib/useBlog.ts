@@ -1,23 +1,24 @@
+import { Blog } from '@/type/type';
 import { createClient } from 'microcms-js-sdk';
 
-export type Blog = {
-    id: string;
-    title: string;
-    body: string; 
-    thumbnail: string;  
-}
+// export type Blog = {
+//     id: string;
+//     title: string;
+//     body: string; 
+//     thumbnail: string;  
+// }
 
 if (!process.env.SERVICE_DOMAIN) {
     throw new Error("MICROCMS_SERVICE_DOMAIN is required");
 }
 
-if (!process.env.API_KEY) {
+if (!process.env.API_KEY_BLOG) {
     throw new Error("MICROCMS_SERVICE_DOMAIN is required");
 }
 
 export const client = createClient({
     serviceDomain: process.env.SERVICE_DOMAIN,
-    apiKey: process.env.API_KEY,
+    apiKey: process.env.API_KEY_BLOG,
 });
 
 // ブログ一覧を取得

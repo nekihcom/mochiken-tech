@@ -1,8 +1,6 @@
 import PrimaryContainer from "@/components/PrimaryContainer";
-import { getDetail,getBlogs } from "@/lib/client";
-import { Blog } from "@/type/type";
+import { getDetail,getBlogs } from "@/lib/useBlog";
 import { Box, Heading, Flex, Image, Text } from "@chakra-ui/react";
-import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
 import Link from "next/link";
 
 type Thumbnail = {

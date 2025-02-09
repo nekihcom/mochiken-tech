@@ -35,6 +35,10 @@ export type Sns = {
 export type Work = {
   title: string;
   link: string;
-  thumbnail?: string;
+  thumbnail?: {
+    url: string;
+    width: number;
+    height: number;
+  };
   excerpt: string;
 }

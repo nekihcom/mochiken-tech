@@ -4,26 +4,16 @@ import { Box } from "@chakra-ui/react";
 
 import WorkList from "./WorkList";
 import HomeSectionContainer from "./HomeSectionContainer";
-import { Work } from "@/type/type";
-// import { getAllWorks } from "@/lib/api";
+import { getWorks } from "@/lib/useWork";
 
-const works:Array<Work> = [
-  {
-    title: 'Mochiken Portfolio',
-    link: '/',
-    thumbnail: '/noimage.png',
-    excerpt: 'もちけんのポートフォリオサイト'
-  }
-];
-const HomeWork = () => {
-  const allWorks =  works; //getAllWorks();
-  // const moreWorks = allWorks.slice(0);
+export default async function HomeWork() {
+  const { contents }  = await getWorks();
 
   return (
     <>
       <HomeSectionContainer title={'Work'}>
-        <WorkList allWorks={allWorks} />
-        { allWorks.length > 3 && 
+        <WorkList allWorks={contents} />
+        { contents.length > 3 && 
           <Box>
             <Link href={'/work'}>すべての作品を見てみる</Link>
           </Box>
@@ -32,4 +22,3 @@ const HomeWork = () => {
     </>
   );
 }
-export default HomeWork;

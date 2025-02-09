@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getBlogs } from "@/lib/client";
+import { getBlogs } from "@/lib/useBlog";
 
 export default async function StaticPage() {
   const { contents }  = await getBlogs();
