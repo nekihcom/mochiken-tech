@@ -1,13 +1,6 @@
 import { Blog } from '@/type/type';
 import { createClient } from 'microcms-js-sdk';
 
-// export type Blog = {
-//     id: string;
-//     title: string;
-//     body: string; 
-//     thumbnail: string;  
-// }
-
 if (!process.env.SERVICE_DOMAIN) {
     throw new Error("MICROCMS_SERVICE_DOMAIN is required");
 }

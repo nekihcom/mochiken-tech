@@ -10,7 +10,6 @@ export default async function HomeBlog () {
   return (
     <>
       <HomeSectionContainer title={'Blog'}>
-        {/* @ts-ignore */}
         <BlogList allBlogs={contents} />
         { contents.length > 3 && 
           <Box>
