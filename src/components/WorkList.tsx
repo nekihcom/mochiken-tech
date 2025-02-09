@@ -2,6 +2,7 @@ import { Grid, GridItem, Center } from "@chakra-ui/react";
 
 import WorkCard from "./WorkCard";
 import { Work } from "@/type/type";
+import RiseAnimation from "@/lib/animation/RiseAnimation";
 
 type Props = {
   allWorks: Array<Work>;
@@ -16,7 +17,9 @@ const WorkList = (props: Props) => {
       <Grid maxW={'960px'} >
         {allWorks && allWorks.map((work, index) => (
           <GridItem key={index} colSpan={1}>
-            <WorkCard work={work} />
+            <RiseAnimation delay={index}>
+              <WorkCard work={work} />
+            </RiseAnimation>
           </GridItem>
         ))}
       </Grid>

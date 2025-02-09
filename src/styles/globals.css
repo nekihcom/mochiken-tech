@@ -14,6 +14,18 @@
 }
 
 
+/*========= スクロールバー ===============*/
+.progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background-color: #009688;
+  transform-origin: 0%;
+  z-index: 999;
+}
+
 /* =================================== 
 スクロールダウン
 =================================== */

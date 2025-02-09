@@ -4,7 +4,7 @@ import { Box } from "@chakra-ui/react";
 
 import WorkList from "./WorkList";
 import HomeSectionContainer from "./HomeSectionContainer";
-import { getWorks } from "@/lib/useWork";
+import { getWorks } from "@/lib/hook/useWork";
 
 export default async function HomeWork() {
   const { contents }  = await getWorks();

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getBlogs } from "@/lib/useBlog";
+import { getBlogs } from "@/lib/hook/useBlog";
 
 export default async function StaticPage() {
   const { contents }  = await getBlogs();

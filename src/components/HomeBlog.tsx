@@ -1,7 +1,7 @@
 import BlogList from "./BlogList";
 import HomeSectionContainer from "./HomeSectionContainer";
 import { Box } from "@chakra-ui/react";
-import { getBlogs } from "@/lib/useBlog";
+import { getBlogs } from "@/lib/hook/useBlog";
 import Link from "next/link";
 
 export default async function HomeBlog () {
