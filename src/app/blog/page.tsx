@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { getBlogs } from "@/lib/hook/useBlog";
 import SectionTitle from "@/components/SectionTitle";
 import BlogList from "@/components/BlogList";

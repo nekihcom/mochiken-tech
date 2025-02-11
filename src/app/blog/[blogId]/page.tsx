@@ -1,4 +1,3 @@
-import PrimaryContainer from "@/components/PrimaryContainer";
 import { getDetail,getBlogs } from "@/lib/hook/useBlog";
 import { Box, Heading, Flex, Image, Text } from "@chakra-ui/react";
 import Link from "next/link";
