@@ -1,4 +1,4 @@
-import { Grid, GridItem, Center } from "@chakra-ui/react";
+import { Grid, GridItem, Flex } from "@chakra-ui/react";
 
 import { Blog } from "@/type/type";
 import BlogCard from "./BlogCard";
@@ -10,7 +10,7 @@ const BlogList = (props: { allBlogs: (Blog & MicroCMSContentId & MicroCMSDate)[]
 
   return (
     <>
-      <Center mt={{base:10, md:20}}>
+      <Flex mt={{base:10, md:20}}>
         <Grid maxW={'960px'} >
           {allBlogs && allBlogs.map((blog, index) => (
             <GridItem key={index} colSpan={1}>
@@ -20,7 +20,7 @@ const BlogList = (props: { allBlogs: (Blog & MicroCMSContentId & MicroCMSDate)[]
             </GridItem>
           ))}
         </Grid>
-      </Center>
+      </Flex>
     </>
   );
 }

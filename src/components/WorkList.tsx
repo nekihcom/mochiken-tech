@@ -1,4 +1,4 @@
-import { Grid, GridItem, Center } from "@chakra-ui/react";
+import { Grid, GridItem, Flex } from "@chakra-ui/react";
 
 import WorkCard from "./WorkCard";
 import { Work } from "@/type/type";
@@ -13,7 +13,7 @@ const WorkList = (props: Props) => {
 
   return (
     <>
-    <Center mt={{base:10, md:20}}>
+    <Flex mt={{base:10, md:20}}>
       <Grid maxW={'960px'} >
         {allWorks && allWorks.map((work, index) => (
           <GridItem key={index} colSpan={1}>
@@ -23,7 +23,7 @@ const WorkList = (props: Props) => {
           </GridItem>
         ))}
       </Grid>
-      </Center>
+      </Flex>
     </>
   );
 }

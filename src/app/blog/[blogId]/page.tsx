@@ -31,9 +31,11 @@ export default async function StaticDetailPage({
   const thumbnail = blog.thumbnail as unknown as Thumbnail;
   return(
     <>
-      <Box as={'main'} css={{py:10, px:5}}>
-        <PrimaryContainer>
-          <Box as={'article'} m={'0 auto'} maxW={'720px'}>
+      {/* <Box as={'main'} css={{py:10, px:5}}> */}
+        {/* <PrimaryContainer> */}
+          <Box as={'article'}
+            // m={'0 auto'} maxW={'720px'}
+          >
             <Box css={{mb:5}}>
               <Heading as={'h2'} css={{
                 fontWeight: 700,
@@ -52,8 +54,8 @@ export default async function StaticDetailPage({
               <Link href={'/test'}>記事の一覧に戻る</Link>
             </Box>
           </Box>
-        </PrimaryContainer>
-      </Box>
+        {/* </PrimaryContainer> */}
+      {/* </Box> */}
 
     </>
   )

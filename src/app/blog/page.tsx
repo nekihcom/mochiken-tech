@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { getBlogs } from "@/lib/hook/useBlog";
+import SectionTitle from "@/components/SectionTitle";
+import BlogList from "@/components/BlogList";
 
 export default async function StaticPage() {
   const { contents }  = await getBlogs();
@@ -10,15 +12,8 @@ export default async function StaticPage() {
   
   return (
     <>
-      <div>
-        <ul>
-          {contents.map((blog) => (
-            <li key={blog.id}>
-              <Link href={`/test/${blog.id}`}>{blog.title}</Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <SectionTitle title="blog" />
+      <BlogList allBlogs={contents} />
     </>
   );
 }

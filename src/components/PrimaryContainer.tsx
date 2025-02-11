@@ -1,4 +1,4 @@
-import { Container } from '@chakra-ui/react';
+import { Box, Container } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
 type Props = {
@@ -8,7 +8,9 @@ const PrimaryContainer = (props:Props) => {
   const { children } = props;
   return (
     <>
-      <Container maxW={'5xl'} fluid>{ children }</Container>
+      <Box as={'main'}>
+        <Container maxW={'5xl'} fluid>{ children }</Container>
+      </Box>
     </>
   );
 }
