@@ -9,7 +9,7 @@ type Props = {
   directionFrom?: 'left' | 'right' | 'upper' | 'lower';
 }
 const FadeInView = (props: Props) => {
-  const { children, delay=0,  duration=2, directionFrom='left' } = props;
+  const { children, delay=0,  duration=1, directionFrom='left' } = props;
 
   let ini_ani = {
     initial: { opacity:0, x:-100, y:0},

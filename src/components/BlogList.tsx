@@ -11,7 +11,10 @@ const BlogList = (props: { allBlogs: (Blog & MicroCMSContentId & MicroCMSDate)[]
   return (
     <>
       <Flex mt={{base:10, md:20}}>
-        <Grid maxW={'960px'} >
+        <Grid maxW={'960px'} 
+          templateColumns="repeat(3, 1fr)"
+          gap={5}
+        >
           {allBlogs && allBlogs.map((blog, index) => (
             <GridItem key={index} colSpan={1}>
               <RiseAnimation delay={index}>

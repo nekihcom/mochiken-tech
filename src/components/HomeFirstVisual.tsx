@@ -32,10 +32,10 @@ const HomeFirstVisual = () => {
                 lineHeight={1}
                 textTransform={'uppercase'}
               >
-                <FadeInView delay={3}>
+                <FadeInView delay={2.5}>
                   <Box as={'span'} color={'teal.600'}>Mochiken</Box>
                 </FadeInView>
-                <FadeInView delay={6}>
+                <FadeInView delay={4}>
                   <Text>Portfolio.</Text>
                 </FadeInView>
               </Heading>

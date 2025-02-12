@@ -33,12 +33,17 @@ export type Sns = {
 
 
 export type Work = {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  revisedAt: string
   title: string;
-  link: string;
-  thumbnail?: {
-    url: string;
-    width: number;
-    height: number;
+  thumbnail: {
+      url: string;
+      height: number;
+      width: number;
   };
+  link: string;
   excerpt: string;
 }

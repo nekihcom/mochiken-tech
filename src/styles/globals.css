@@ -94,9 +94,38 @@
 ブログ
 =================================== */
 #BlogBody * {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-#BlogFooter a {
+#BlogBody h1,
+#BlogBody h2,
+#BlogBody h3,
+#BlogBody h4 {
+  font-weight: 700;
+}
+
+#BlogBody h1 {
+  font-size: 1.5rem;
+}
+
+#BlogBody h2 {
+  font-size: 1.25rem;
+}
+
+#BlogBody h3 {
+  font-size: 1.1rem;
+}
+
+#BlogBody a {
+  color: #007065;
+}
+
+#BlogBody p {
+  line-height: 1.75rem;
+  letter-spacing: 1.25;
+}
+
+#BlogFooter a,
+#BlogBody a {
   text-decoration: underline;
 }

@@ -22,7 +22,7 @@ const Menu = () => {
       </MenuTrigger>
       <MenuContent>
         <MenuItem value='new-txt-a'>
-          <Link href={'#dummy'}>Dummy</Link>
+          <Link href={'/'}>BLOG</Link>
         </MenuItem>
         <MenuItem value='new-file-a'>
           Menu B         

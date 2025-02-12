@@ -16,7 +16,6 @@ const BlogCard = (props: Props) => {
           <Card.Root 
             maxW="sm" 
             overflow="hidden" 
-            maxWidth={'315px'}
           >
             <Image
               src={blog.thumbnail.url}
