@@ -13,8 +13,12 @@ const WorkList = (props: Props) => {
 
   return (
     <>
-    <Flex mt={{base:10, md:20}}>
-      <Grid maxW={'960px'} >
+    <Flex mt={{base:10, md:20}} justify={{base:'center'}}>
+      <Grid
+        maxW={{base:'330px', md:'960px'}} 
+        templateColumns={{base:"repeat(1, 1fr)", md:"repeat(3, 1fr)"}}
+        gap={5}
+      >
         {allWorks && allWorks.map((work, index) => (
           <GridItem key={index} colSpan={1}>
             <RiseAnimation delay={index}>
