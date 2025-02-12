@@ -12,8 +12,8 @@ const WorkCard = (props: Props) => {
   return (
     <>
       <Card.Root maxW="sm" overflow="hidden" css={{boxShadow:'0px 5px 20px -5px #777777', position:'relative'}}>
-        <Link href={work.link}>
-          <Box maxW={'315px'}>
+        <Link href={`/work/${work.id}`}>
+          <Box maxW={'315px'} borderRadius={'1rem'}>
             <Image
               src={work.thumbnail && work.thumbnail.url}
               alt={work.title}

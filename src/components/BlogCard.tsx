@@ -16,6 +16,7 @@ const BlogCard = (props: Props) => {
           <Card.Root 
             maxW="sm" 
             overflow="hidden" 
+            borderRadius={'1rem'}
           >
             <Image
               src={blog.thumbnail.url}

@@ -46,4 +46,5 @@ export type Work = {
   };
   link: string;
   excerpt: string;
+  body: string;
 }

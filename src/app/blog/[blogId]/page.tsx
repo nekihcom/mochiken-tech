@@ -39,7 +39,7 @@ export default async function StaticDetailPage({
           <Text>{ blog.createdAt && blog.createdAt.split('T')[0] }</Text>
         </Box>
         {thumbnail && <Flex justify={'center'}>
-          <Image src={thumbnail.url} alt={blog.title} />
+          <Image src={thumbnail.url} alt={blog.title} borderRadius={'1rem'} />
         </Flex>}
         <Box id="BlogBody" dangerouslySetInnerHTML={{ __html: `${blog.body}` }} css={{
           mb:5,
