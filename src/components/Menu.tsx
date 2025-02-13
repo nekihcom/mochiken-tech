@@ -1,13 +1,10 @@
 'use client';
 import Link from 'next/link';
 
-import { Box, Button, Flex, For } from '@chakra-ui/react';
+import { Box, For } from '@chakra-ui/react';
 
 import {
-  MenuContent,
-  MenuItem,
   MenuRoot,
-  MenuTrigger,
 } from '@/components/ui/menu';
 
 
@@ -24,28 +21,7 @@ const menuList = [
 const Menu = () => {
   return (
     <MenuRoot>
-      {/* <Box display={{base:'block', md:'none'}}>
-        <MenuTrigger asChild>
-          <Button variant='outline' size='sm' border={'none'} className='hamburgerBtn'>
-            <Box as={'span'}></Box>
-            <Box as={'span'}></Box>
-            <Box as={'span'}></Box>
-          </Button>
-        </MenuTrigger>
-        <MenuContent>
-          <For each={menuList}>
-            {(item, index) => (
-              <MenuItem key={index} value={item.title}>
-                <Link href={item.link}>{item.title}</Link>
-              </MenuItem>
-            )}
-          </For>
-        </MenuContent>
-      </Box> */}
-      <Box 
-        // display={{base:'none', md:'block'}} 
-        position={{md:'relative'}}
-      >
+      <Box position={{md:'relative'}}>
         <Box position={{md:'absolute'}} display={{base:'flex', md:'block'}} right={{md:0}}>
           <For each={menuList}>
             {(item, index) => (
