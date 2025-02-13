@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Box, Card, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Card, Flex, Heading, Image, Text } from "@chakra-ui/react";
 
 import { Blog } from "@/type/type";
 
@@ -17,16 +17,18 @@ const BlogCard = (props: Props) => {
             maxW="sm" 
             overflow="hidden" 
             borderRadius={'1rem'}
+            maxH={'158px'}
           >
             <Image
               src={blog.thumbnail.url}
               alt={blog.title}
+              h={'100%'}
             />
           </Card.Root>
-          <Box py={5}>
+          <Flex py={5} height={'184px'} flexDirection={'column'} justify={'start'}>
             <Heading as={'h4'} fontWeight={700} fontSize={'1.25rem'}>{blog.title}</Heading>
             <Text>{blog.createdAt.split('T')[0]}</Text>
-          </Box>
+          </Flex>
         </Link>
       </Box>
     </>
