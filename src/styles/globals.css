@@ -26,6 +26,71 @@
   z-index: 999;
 }
 
+
+/*========= リンク ===============*/
+/*========= ホバーしたら下線が出てくる ===============*/
+.link.under-line {
+  padding-bottom: 5px;
+  position: relative;
+}
+.link.under-line::before {
+  background: #0d9488;
+  content: '';
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  transform-origin: right top;
+  transform: scale(0, 1);
+  transition: transform .3s;
+}
+.link.under-line:hover::before {
+  transform-origin: left top;
+  transform: scale(1, 1);
+}
+
+
+/*========= ハンバーガーボタン ===============*/
+.hamburgerBtn {
+	/*ボタン内側の基点となるためrelativeを指定。
+  追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定*/
+	position: relative;
+	/* background: #d4d4d8; */
+	cursor: pointer;
+  width: 60px;
+  height:50px;
+	/* border-radius: 5px; */
+}
+/*ボタン内側*/
+.hamburgerBtn span{
+  display: inline-block;
+  transition: all .4s;/*アニメーションの設定*/
+  position: absolute;
+  left: 14px;
+  height: 3px;
+  border-radius: 2px;
+  background: #111111;
+}
+
+
+.hamburgerBtn span:nth-of-type(1) {
+  top:15px;	
+  width: 60%;
+}
+
+.hamburgerBtn span:nth-of-type(2) {
+  top:25px;
+  width: 45%;
+}
+
+.hamburgerBtn span:nth-of-type(3) {
+  top:35px;
+  width: 30%;
+}
+
+
 /* =================================== 
 スクロールダウン
 =================================== */

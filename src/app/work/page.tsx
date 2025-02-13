@@ -1,6 +1,7 @@
 import { getWorks } from "@/lib/hook/useWork";
 import SectionTitle from "@/components/SectionTitle";
 import WorkList from "@/components/WorkList";
+import { Box } from "@chakra-ui/react";
 
 export default async function StaticPage() {
   const { contents }  = await getWorks();
@@ -11,8 +12,10 @@ export default async function StaticPage() {
   
   return (
     <>
-      <SectionTitle title="work" />
-      <WorkList allWorks={contents} />
+      <Box minH={'60vh'}>  
+        <SectionTitle title="work" />
+        <WorkList allWorks={contents} />
+      </Box>
     </>
   );
 }
