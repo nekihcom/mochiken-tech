@@ -1,7 +1,8 @@
 import { JSDOM } from "jsdom";
 import ky from "ky";
 
-import { ParsedQiitaItem, QiitaItemResponse } from "@/type/type";
+import { ParsedQiitaItem, QiitaItemResponse, ParsedNoteItem } from "@/type/type";
+import data from "@/config/rss/data.json";
 
 
 // SAMPLE
@@ -71,3 +72,60 @@ export const getMyAllQiitaPosts = async () => {
     qiitaItems: parsedQiitaItems.slice(0,3)
   };
 };
+
+
+
+// SAMPLE
+//https://zenn.dev/hrkmtsmt/articles/fa7d8y9crypnib
+// npm run update-rss
+export const getMyAllNotePosts = async () => {
+  const jsdom = new JSDOM();
+  const noteItems = data;
+  const ogpUrls: string[] = [];
+  for (let i = 0; i < noteItems.length; i++) {
+    const { link } = noteItems[i];
+    const res = await ky.get(link);
+    const text = await res.text();
+    const el = new jsdom.window.DOMParser().parseFromString(text, "text/html");
+    const headEls = el.head.children;
+    Array.from(headEls).map((v) => {
+      const prop = v.getAttribute("property");
+      if (!prop) return;
+      if (prop === "og:image") {
+        ogpUrls.push(v.getAttribute("content") ?? "");
+      }
+    });
+  };
+
+  const parsedNoteItems: ParsedNoteItem[] = noteItems.map(
+    (
+      {
+        title,
+        link,
+        pubDate,
+        content,
+        contentSnippet,
+        guid,
+        isoDate
+      },
+      i,
+    ) => {
+      const parsedItem: ParsedNoteItem = {
+        title,
+        link,
+        pubDate,
+        content,
+        contentSnippet,
+        guid,
+        isoDate,
+        ogpImageUrl: ogpUrls[i],
+      };
+      return parsedItem;
+    },
+  );
+
+  return {
+    noteItems: parsedNoteItems.slice(0,3)
+  };
+
+}
