@@ -3,17 +3,31 @@ import type { Metadata } from 'next';
 import { Box } from '@chakra-ui/react';
 
 import '../styles/globals.css';
-import { HOME_OG_IMAGE_URL } from '@/lib/constants';
 import { Provider } from '@/components/ui/provider';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { BASE_URL } from '@/data/data';
 
-export const metadata: Metadata = {
-  title: `Mochiken`,
-  description: `エンジニアもちけんのポートフォリオサイトです。`,
-  metadataBase: new URL('http://localhost:3000'),
+
+const siteConfig = {
+  baseUrl: BASE_URL
+}
+
+export const metadata:Metadata = {
+  title: "Mochiken",
+  description: "エンジニアMochikenのポートフォリオサイトです。",
+  metadataBase: new URL(siteConfig.baseUrl),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    images: [HOME_OG_IMAGE_URL],
+    title: "Mochiken",
+    description: "エンジニアMochikenのポートフォリオサイトです。",
+    images: [{
+      url: "/ogp/thumbnail.png",
+      width: 1200,
+      height: 630
+    }],
   },
 };
 
