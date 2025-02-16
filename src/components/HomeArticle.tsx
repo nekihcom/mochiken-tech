@@ -12,18 +12,10 @@ export default async function HomeArticle () {
   return (
     <>
       <HomeSectionContainer title={'Article'}>
-
         <SubSectionTitle title={'note'} />
         <NoteArticleList allArticles={noteItems} />
-
         <SubSectionTitle title={'Qiita'} />
         <QiitaArticleList allArticles={qiitaItems} />
-        {/* <BlogList allBlogs={contents} />
-        { contents.length > 3 && 
-          <Box>
-            <Link href={'/blog'}>すべての記事を見てみる</Link>
-          </Box>
-        } */}
       </HomeSectionContainer>
     </>
   );

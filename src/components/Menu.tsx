@@ -9,10 +9,6 @@ import {
 
 
 const menuList = [
-  // {
-  //   title: 'BLOG',
-  //   link: '/blog'
-  // },
   {
     title: 'WORK',
     link: '/work'
