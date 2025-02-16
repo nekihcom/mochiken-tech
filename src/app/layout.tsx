@@ -6,12 +6,23 @@ import '../styles/globals.css';
 import { Provider } from '@/components/ui/provider';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { BASE_URL } from '@/data/data';
+
+
+const siteConfig = {
+  baseUrl: BASE_URL
+}
 
 export const metadata:Metadata = {
+  title: "Mochiken",
+  description: "エンジニアMochikenのポートフォリオサイトです。",
+  metadataBase: new URL(siteConfig.baseUrl),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: "Mochiken",
-    description:
-      "エンジニアMochikenのポートフォリオサイトです。",
+    description: "エンジニアMochikenのポートフォリオサイトです。",
     images: [{
       url: "/ogp/thumbnail.png",
       width: 1200,

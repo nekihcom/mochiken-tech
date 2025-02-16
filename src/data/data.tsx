@@ -3,6 +3,9 @@ import { FaGithub, FaXTwitter } from 'react-icons/fa6';
 
 import { Sns } from "@/type/type";
 
+
+export const BASE_URL:string = 'https://www.mochiken.tech'
+
 export const SnsLinkList:Array<Sns> = [
   {
     title: 'X (Twitter)',
