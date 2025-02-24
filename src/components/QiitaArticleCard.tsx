@@ -1,8 +1,8 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import { Box, Card, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Card, Flex, Heading, Image, Text } from '@chakra-ui/react';
 
-import { ParsedQiitaItem } from "@/type/type";
+import { ParsedQiitaItem } from '@/type/type';
 
 type Props = {
   article: ParsedQiitaItem;
@@ -16,10 +16,10 @@ const QiitaArticleCard = (props: Props) => {
   return (
     <>
       <Box _hover={{opacity:0.5, transition:'all 0.3s'}}>
-        <Link href={`${article.url}`}>
+        <Link href={`${article.url}`} target={('_blank')}>
           <Card.Root 
-            maxW="sm" 
-            overflow="hidden" 
+            maxW='sm'
+            overflow='hidden' 
             borderRadius={'1rem'}
             maxH={'158px'}
           >

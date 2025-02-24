@@ -1,8 +1,8 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import { Box, Card, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Card, Flex, Heading, Image, Text } from '@chakra-ui/react';
 
-import { ParsedNoteItem } from "@/type/type";
+import { ParsedNoteItem } from '@/type/type';
 
 type Props = {
   article: ParsedNoteItem;
@@ -16,10 +16,10 @@ const NoteArticleCard = (props: Props) => {
   return (
     <>
       <Box _hover={{opacity:0.5, transition:'all 0.3s'}}>
-        <Link href={`${article.link}`}>
+        <Link href={`${article.link}`} target={('_blank')}>
           <Card.Root 
-            maxW="sm" 
-            overflow="hidden" 
+            maxW='sm' 
+            overflow='hidden' 
             borderRadius={'1rem'}
             maxH={'158px'}
           >
