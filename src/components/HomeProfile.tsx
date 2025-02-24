@@ -58,7 +58,7 @@ const HomeProfile = () => {
               詳しくはプロフィールをご覧ください👇👇
             </Text>
           </Box>
-          <Box mt={10} ml={5} position={'relative'} w={'30%'}>
+          <Box mt={10} ml={5} position={'relative'} w={'30%'} minW={'153px'}>
             <Text 
               _after={{
                 content: '""',
