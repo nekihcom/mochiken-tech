@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
         search: '',
       },
     ],
+    domains: ["qiita-user-contents.imgix.net", "assets.st-note.com"],
   },
   experimental: {
     optimizePackageImports: ["@chakra-ui/react"],

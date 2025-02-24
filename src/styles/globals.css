@@ -156,17 +156,12 @@
 
 
 /* =================================== 
-ブログ
+成果物
 =================================== */
-#BlogBody * ,
 #WorkBody * {
   margin-bottom: 1.5rem;
 }
 
-#BlogBody h1,
-#BlogBody h2,
-#BlogBody h3,
-#BlogBody h4,
 #WorkBody h1,
 #WorkBody h2, 
 #WorkBody h3, 
@@ -174,46 +169,37 @@
   font-weight: 700;
 }
 
-#BlogBody h1,
 #WorkBody h1 {
   font-size: 1.5rem;
 }
 
-#BlogBody h2,
 #WorkBody h2 {
   font-size: 1.25rem;
 }
 
-#BlogBody h3,
 #WorkBody h3 {
   font-size: 1.1rem;
 }
 
-#BlogBody a,
 #WorkBody a {
   color: #007065;
 }
 
-#BlogBody p,
 #WorkBody p {
   line-height: 1.75rem;
   letter-spacing: 1.25;
 }
 
-#BlogBody li,
 #WorkBody li {
   list-style: disc;
   margin-bottom: 0.5rem;
   margin-left: 1.3rem;
 }
 
-#BlogBody img,
 #WorkBody img {
   border-radius: 1rem;
 }
 
-#BlogFooter a,
-#BlogBody a,
 #WorkFooter a,
 #WorkBody a {
   text-decoration: underline;

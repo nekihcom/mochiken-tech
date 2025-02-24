@@ -6,15 +6,19 @@
     "dev": "next dev --turbopack",
     "build": "rm -rf .next/cache/fetch-cache && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "update-rss": "node src/config/rss/rss-parser.mjs"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.5.1",
     "@emotion/react": "^11.14.0",
     "classnames": "^2.5.1",
     "date-fns": "^4.1.0",
+    "dayjs": "^1.11.13",
     "framer-motion": "^12.4.1",
     "gray-matter": "^4.0.3",
+    "jsdom": "^26.0.0",
+    "ky": "^1.7.5",
     "microcms-js-sdk": "^3.1.2",
     "next": "15.1.6",
     "next-themes": "^0.4.4",
@@ -22,10 +26,12 @@
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
     "remark": "^15.0.1",
-    "remark-html": "^16.0.1"
+    "remark-html": "^16.0.1",
+    "rss-parser": "^3.13.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@types/jsdom": "^21.1.7",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

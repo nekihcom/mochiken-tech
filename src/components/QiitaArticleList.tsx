@@ -1,12 +1,11 @@
 import { Grid, GridItem, Flex } from "@chakra-ui/react";
 
-import { Blog } from "@/type/type";
-import BlogCard from "./BlogCard";
-import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
+import QiitaArticleCard from "./QiitaArticleCard";
 import RiseAnimation from "@/lib/animation/RiseAnimation";
+import { ParsedQiitaItem } from "@/type/type";
 
-const BlogList = (props: { allBlogs: (Blog & MicroCMSContentId & MicroCMSDate)[]; }) => {
-  const { allBlogs } = props;
+const QiitaArticleList = (props:{allArticles:Array<ParsedQiitaItem>}) => {
+  const { allArticles } = props;
 
   return (
     <>
@@ -16,10 +15,10 @@ const BlogList = (props: { allBlogs: (Blog & MicroCMSContentId & MicroCMSDate)[]
           templateColumns={{base:"repeat(1, 1fr)", md:"repeat(3, 1fr)"}}
           gap={5}
         >
-          {allBlogs && allBlogs.map((blog, index) => (
+          {allArticles && allArticles.map((article, index) => (
             <GridItem key={index} colSpan={1}>
               <RiseAnimation delay={index}>
-                <BlogCard blog={blog} />
+                <QiitaArticleCard article={article} />
               </RiseAnimation>
             </GridItem>
           ))}
@@ -28,4 +27,4 @@ const BlogList = (props: { allBlogs: (Blog & MicroCMSContentId & MicroCMSDate)[]
     </>
   );
 }
-export default BlogList;
+export default QiitaArticleList;

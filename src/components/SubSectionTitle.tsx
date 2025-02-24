@@ -3,18 +3,19 @@ import { Heading } from "@chakra-ui/react";
 
 type Props = {
   title?: string;
+  isTextUpper?: string;
 };
-const SectionTitle = (props: Props) => {
-  const { title } = props;
+const SubSectionTitle = (props: Props) => {
+  const { title, isTextUpper='none' } = props;
   return (
     <>
       <SlideInView>
         <Heading 
-          as={'h2'}
+          as={'h3'}
           mb={10}
-          textTransform={'uppercase'}
+          textTransform={isTextUpper}
           fontWeight={700}
-          fontSize={'5rem'}
+          fontSize={'4rem'}
           position={'relative'}
           lineHeight={1}
       >{ title }</Heading>
@@ -22,4 +23,4 @@ const SectionTitle = (props: Props) => {
     </>
   );
 }
-export default SectionTitle;
+export default SubSectionTitle;
