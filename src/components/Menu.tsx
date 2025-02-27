@@ -10,6 +10,10 @@ import {
 
 const menuList = [
   {
+    title: 'PROFILE',
+    link: '/profile'
+  },
+  {
     title: 'WORK',
     link: '/work'
   },

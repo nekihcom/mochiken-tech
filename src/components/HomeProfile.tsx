@@ -2,6 +2,7 @@ import { Box, Flex, Heading, Text, Image, Separator } from "@chakra-ui/react";
 
 import HomeSectionContainer from "./HomeSectionContainer";
 import SnsIconLinkList from "./SnsIconLinkList";
+import Link from "next/link";
 
 const HomeProfile = () => {
   return (
@@ -33,7 +34,6 @@ const HomeProfile = () => {
           <Box pt={10} pl={5}>
             <Heading as={'h2'}
               mb={5}
-              textTransform={'uppercase'} 
               fontWeight={700}
               fontSize={'2rem'}
               position={'relative'}
@@ -41,25 +41,42 @@ const HomeProfile = () => {
               display={'inline-block'}
               _before={{
                 content:`""`,
-                width:'110.630px',
+                width:'230.0px',
                 height:'5px',
                 background:'teal.600',
                 position:'absolute',
                 left:0,
                 bottom:-1
               }}
-            >About</Heading>
+            >About This Site</Heading>
             <Text>
-              こんにちは、もちけんと申します。
+              こんにちは、もちけん(<Link href={'/profile'}><Text as={'span'} color={'teal.600'} textDecoration={'underline'} _hover={{opacity:0.5}}>@nekihcom</Text></Link>)と申します。
               <br />
               こちらではブログやこれまでの作品を発信しています。
               <br />
               <br />
-              得意：CMS、BI
-              <br />
-              興味：Next.js、Django、Rails
-              <br />
-              好き：スポーツ、筋トレ、お笑い
+              詳しくはプロフィールをご覧ください👇👇
+            </Text>
+          </Box>
+          <Box mt={10} ml={5} position={'relative'} w={'30%'} minW={'153px'}>
+            <Text 
+              _after={{
+                content: '""',
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                width: 0,
+                height: '2px',
+                backgroundColor: 'teal.600',
+                transition: 'all 0.3s'
+              }}
+              _hover={{
+                _after: {
+                  width: '100%'
+                }
+              }}
+            >
+              <Link href={'/profile'}><Text as={'span'} transition={'all 0.3s'} fontWeight={700} _hover={{color: 'teal.600'}}>もっと知る　→</Text></Link>
             </Text>
           </Box>
         </Box>
