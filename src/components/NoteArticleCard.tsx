@@ -11,7 +11,7 @@ const NoteArticleCard = (props: Props) => {
   const { article } = props;
   // https://www.ey-office.com/blog_archive/2023/04/18/short-code-to-get-todays-date-in-yyyy-mm-dd-format-in-javascript/
   // sv-SEロケールはYYYY-MM-DD形式の日付文字列を戻す
-  const displayArticleCreatedDt = new Date(article.pubDate.split('T')[0]).toLocaleDateString('sv-SE');
+  const displayArticleCreatedDt = new Date(article.pubDate).toLocaleDateString('sv-SE');
 
   return (
     <>
