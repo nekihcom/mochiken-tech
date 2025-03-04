@@ -44,10 +44,20 @@ export default async function StaticDetailPage({
         {thumbnail && <Flex justify={'center'}>
           <Image src={thumbnail.url} alt={work.title} />
         </Flex>}
+        <Box my={5}>
+          <Link href={`${work.link}`} target="_blank">
+            <Text as={'span'} color={'teal.600'} textDecoration={'underline'} _hover={{opacity:0.5}}>制作したアプリを見てみる</Text>
+          </Link>
+        </Box>
         <Box id="WorkBody" dangerouslySetInnerHTML={{ __html: `${work.body}` }} css={{
           mb:5,
           py:5
         }}/>
+        <Box my={5}>
+          <Link href={`${work.link}`} target="_blank">
+            <Text as={'span'} color={'teal.600'} textDecoration={'underline'} _hover={{opacity:0.5}}>制作したアプリを見てみる</Text>
+          </Link>
+        </Box>
         <Box id="WorkFooter">
           <Link href={'/work'}>作品の一覧に戻る</Link>
         </Box>
